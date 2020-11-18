@@ -1,0 +1,498 @@
+/* Global */
+
+
+:root {
+    /* Color */
+    --text-color: #f0f4f5;
+    --icon-color: #ffc7c7;
+    --point-color: #feb546;
+    --black: #000000;
+    --light-grey: #7c7979;
+    --navy: #203A43;
+  
+    /* Font size */
+    --font-large: 48px;
+    --font-medium: 28px;
+    --font-regular: 18px;
+    --font-small: 16px;
+  
+    /* Font weight */
+    --weight-bold: 700;
+    --weight-semi-bold: 600;
+    --weight-nomal: 400;
+}
+    /* Size
+    --size-border-radius: 25px;
+  }
+  */
+  
+
+  
+  h2 {
+    font-size: var(--font-medium);
+    font-weight: var(--weight-semi-bold);
+    color: var(--black);
+    margin: 8px 0;
+  }
+  
+  h3 {
+    font-size: var(--font-regular);
+    font-weight: var(--weight-regular);
+    color: var(--black);
+    margin: 8px 0;
+  }
+  
+  p {
+    font-size: var(--font-regular);
+    font-weight: var(--weight-regular);
+    color: var(--black);
+    margin: 4px 0;
+  }
+
+
+
+/*
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+button {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+*/
+
+* {
+    box-sizing: border-box;
+    margin:0;
+}
+html {
+    scroll-behavior: smooth;
+  }
+
+ /* Grid */
+   body{
+    display: grid;
+    grid-template-rows: 100px 3fr 1fr;
+    font-family: 'Source Sans Pro';  /* html에 적용하고자 하는 폰트의 link 적용 후, 해당 font-family 내용 body에 적용하기 */
+}
+
+.navbar {
+    grid-row-start:1;
+    grid-row-end: 2;
+    background: linear-gradient(#0F2027, #2C5364,#0F2027);
+    width: 100%;
+    display: flex;    
+    justify-content: space-between;  /* 각 div 사이의 공간을 균등하게 배분 */
+    align-items: center;
+    padding: 8px 12px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.navbar_logo {
+    font-size: 32px;
+    margin-left: 10px;
+    font-weight: var(--weight-bold);   
+    cursor: pointer;
+}
+.navbar_logo i{
+    color:var(--icon-color);
+    opacity: 0.9;
+}
+/* .navbar_logo:hover{
+    background-color: var(--point-color);
+    border-radius: 10px;
+} */
+
+.navbar_menu {
+    display: flex;
+    list-style: none;
+    padding-left:0;  /* 기본적으로 padding-left값이 적용되어 있기 때문에 0으로 바꿔주면 중앙배치 완료 */
+    font-size: 20px;
+    color:var(--text-color);
+    font-weight: var(--weight-nomal);
+}
+.navbar_menu li {
+    padding: 8px 23px;  /* padding(0px 0px) = 위+아래, 좌+우 와 같다. 즉 위+아래 8px, 좌+우 12px로 적용한 것 */
+    margin: 0px 6px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.navbar_menu li:hover{
+    background-color: var(--point-color);
+    border-radius: 10px;
+}
+
+
+.navbar_icon {  
+    list-style: none;
+    color:var(--icon-color);
+    display: flex;
+    padding-left:0;
+}
+.navbar_icon li{ 
+    padding: 8px 12px;
+    font-size: 35px;
+}
+.navbar_toggleBtn{
+    display:none;   /* display:none;을 해줌으로서 일반 화면에는 나오지 않고 미디어쿼리에 display:block;를 적용하여 화면이 작아질때만 block으로 나오게 한다 */
+    position:absolute;
+    right: 32px;  /* right값을 설정하지 않으면 기본 왼쪽 상단에 위치한다. right값을 적용하면 해당 값만큼 오른쪽에 떨어져서 위치한다. */
+    font-size: 24px;
+    color:var(--point-color);
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+        width:100%;
+        height: auto;
+        padding: 8px 24px;
+    }
+    .navbar_logo{
+        width:100%;
+        text-align: center;
+    }
+    .navbar_menu {
+        display: none;   /* toggleBtn을 눌렀을때 나오도록 만들기 위해, 기본적으로  display: none;을 적용해준다 */
+        flex-direction: column;
+        align-items: flex-start;
+        width:100%;
+    }
+    .navbar_menu li{
+        width:100%;
+        text-align: center;
+    }
+    .navbar_icon { 
+        display: none;   /* toggleBtn을 눌렀을때 나오도록 만들기 위해, 기본적으로  display: none;을 적용해준다 */
+        justify-content: center;
+        width:100%;
+        padding-left:0;
+    }
+    .navbar_toggleBtn{
+        display:block;
+    }
+    .navbar_menu.active, .navbar_icon.active{
+        display: flex;
+    }
+}
+
+
+/* Section  */
+section{
+    grid-row-start:2;
+    grid-row-end: 3;
+    margin:0;
+    padding:0;
+}
+header{
+    width:100%;
+    height:300px;
+    background-color:black;
+}
+h1 {
+    font-size: var(--font-large);
+    font-weight: var(--weight-bold);
+    color:var(--text-color);
+    text-align: center;
+  }
+main{
+    background-color: var(--point-color);
+}
+.home_img{
+    padding: 80px;
+    text-align:center;
+}
+
+
+
+  /* Footer */
+footer{
+    grid-row-start:3;
+    grid-row-end: 4s;
+    font-size: 25px;
+    padding:8px 24px;
+    text-align: center;
+}
+footer i{
+    color:var(--icon-color);
+    font-size: 40px;
+    padding:8px 15px;
+}
+
+
+
+  
+
+/* Home  */
+#home {
+    padding: 80px 0px 0px 0px;
+    margin: auto;
+    color: var(--color-black);
+    
+}
+
+.home__container__upper {
+    display: flex;
+    flex: space-between;
+    align-items: center;
+    font-family: "Nanum Gothic";
+    margin: 0px 0px;
+}
+
+.home__container__upper__left {
+    flex-basis: 80%;
+}
+.home__sns {
+    display: flex;
+
+}
+.home__sns__item {
+    
+    margin-bottom: 20px;
+    padding-left: 12px;
+    
+   
+}
+.home__sns__item a{
+    display: flex;
+    color: var(--navy);
+}
+
+.home__sns__item i:hover{
+    color: var(--color-dark-pink);
+}
+
+
+
+.home__container__under a {
+    color: black;
+    margin: 0px 0px;
+}
+
+.home__container__under {
+    margin: 20px 0px 10px 0px;
+    text-align: center;
+    
+}
+
+.blog__address {
+    text-align: left;
+    /* font-weight: var(--weight-semi-bold); */
+}
+
+.email__address {
+    text-align: left;
+    /* font-weight: var(--weight-semi-bold); */
+}
+
+
+/* button  */
+
+.home__contact {
+    margin: 50px 0px 0px 0px;
+}
+.home__contact a {
+
+    color: var(--color-navy);
+    font-size: var(--font-regular);
+    font-weight: var(--weight-bold);
+    text-align: center;
+    padding: 8px;
+    border: 2px solid var(--color-navy);
+    border-radius: var(--size-border-radius);
+}
+.home__contact:hover {
+    color: var(--color-dark-pink);
+    border-color: var(--color-dark-pink);
+}
+.home__contact a:hover {
+    color: var(--color-dark-pink);
+    border-color: var(--color-dark-pink);
+}
+
+/* Section common */
+.section {
+    padding: 50px;
+    text-align: center;
+    margin: auto;
+  
+}
+
+.section__container {
+    margin: auto;
+    max-width: 50rem;
+    padding: 2.4375rem 1.21875rem;
+}
+
+
+/* About  */
+#about {
+    max-width: 50rem;
+    padding: 2.4375rem 1.21875rem;
+    padding-top: 90px;
+    font-family: "나눔고딕";
+    margin-bottom: 10px;
+    text-align: center;
+    
+}
+.about__avatar{
+    
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 3px solid var(--color-navy);
+}
+
+.education {
+    margin-top: 30px;
+    text-align: left;
+    padding: 5px 100px;
+    font-family: "나눔고딕";
+    
+}
+
+.experience__title {
+    text-align: left;
+    padding: 5px 100px;
+    font-family: "나눔고딕";
+}
+
+.company {
+    text-align: left;
+    padding: 0px 100px;
+    
+}
+
+.about__description {
+    text-align: left;
+    padding: 50px 100px 0px 100px;
+    font-family: "나눔고딕";
+    /* border: 2px solid var(--color-navy); */
+}
+
+.about__description ul {
+ 
+    
+}
+.about__description li {
+   
+    padding: 5px 0px;
+}
+
+/* Skills  */
+#skills {
+    
+   background-color: var(--color-pink);
+    /* background: linear-gradient(45deg, #0F2027,#203A43, #2C5364); */
+    
+}
+
+
+.skill {
+    margin-bottom: 10%;
+}
+
+.skillset {
+    
+    display: flex;
+    background-color: var(--color-dark-white);
+}
+
+
+.skillset__left {
+    flex-basis: 60%;
+    background-color: var(--color-white);
+    padding: 20px 40px;
+   
+
+}
+.skillset__right {
+    flex-basis: 40%;
+    margin: 0px;
+    border:0;
+    padding: 0;
+}
+
+.skill__title {
+   font-weight: bold;
+   margin-bottom: 20px;
+}
+.language__title {
+    font-weight: bold;
+    margin-bottom: 20px;
+ }
+ .etc__title {
+    font-weight: bold;
+    margin-bottom: 20px;
+ }
+
+.skill__description {
+    display: flex;
+    justify-content: space-between;
+}
+
+.skill__bar {
+    width: 100%;
+    height: 3px;
+    background-color: rgb(226, 225, 225);
+}
+
+.skill__value {
+    height: 3px;
+    background-color: var(--color-navy);
+}
+
+.tools {
+    padding: 5px;
+    background-color: var(--color-yellow);
+  
+}
+
+.language {
+    padding: 5px;
+    background-color: var(--color-orange);
+    
+}
+
+#projects {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+}
+
+
+
+.projects__wrapper {
+    text-align: center;
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+ 
+}
+
+.project__image {
+    width: 280px;
+    height: 250px;
+}
+
+
+.project_description {
+    margin: 50px;
+    width: 100%;
+    height: 100%;
+   
+}
