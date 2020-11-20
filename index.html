@@ -57,17 +57,38 @@
 
         <!--시계 넣기-->
     <div class="clock"> 
-        <!--
         <div class="js-clock">
             <span class="js-title"></span>
             <script src="clock.js"></script>
-        </div>
-        -->            
+        </div>         
     </div>
+
+    <script>
+        const clockContainer=document.querySelector(".js-clock"),
+      clockTitle= clockContainer.querySelector("span");
+
+      function getTime(){
+        const date = new Date();
+        const minutes = date.getMinutes();
+        const hours = date.getHours();
+        const seconds = date.getSeconds();
+        clockTitle.innerText = `${
+          hours <10 ? `0${hours}` : hours}:${
+          minutes < 10 ? `0${minutes}` : minutes}:${
+          seconds < 10 ? `0${seconds}` : seconds}`;
+      }
+
+      function init(){
+          getTime();
+          setInterval(getTime, 1000);
+      }
+
+      init();
+    </script>
 
    <!--https://kutar37.tistory.com/entry/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C%EC%87%BC-%EA%B5%AC%ED%98%84-cssjavascriptjquery -->
             
-    <!--슬라이드 이미지1-->    
+    <!--img slide(1)-->    
     <div class="slideshow-container">
 
         <div class="mySlides fade">   <!--mySlides와 fade라는 class를 2개 적용한 것-->
@@ -81,7 +102,7 @@
         </div>
                 
         <div class="mySlides fade">
-            <img src="image03.jpg" alt="banana image" style="width:100%; height:400px;" />
+            <img src="image03.jpg" alt="banana image" style="width:100%; height:40s0px;" />
             <div class="text">Love Banana</div>
         </div>
                 
@@ -95,10 +116,83 @@
             <span class="dot" onclick="currentSlide(3)"></span> 
         </div>
     
-       
-    <div class="header3">
-
+    <!--img slide(2)-->      
+    <ul class="slides">
+        <input type="radio" name="radio-btn" id="img-1" checked />
+        <li class="slide-container">
+    <div class="slide">
+    <img src="http://farm9.staticflickr.com/8072/8346734966_f9cd7d0941_z.jpg" />
+            </div>
+    <div class="nav">
+    <label for="img-6" class="prev">&#x2039;</label>
+    <label for="img-2" class="next">&#x203a;</label>
     </div>
+        </li>
+    
+        <input type="radio" name="radio-btn" id="img-2" />
+        <li class="slide-container">
+            <div class="slide">
+              <img src="http://farm9.staticflickr.com/8504/8365873811_d32571df3d_z.jpg" />
+            </div>
+    <div class="nav">
+    <label for="img-1" class="prev">&#x2039;</label>
+    <label for="img-3" class="next">&#x203a;</label>
+    </div>
+        </li>
+    
+        <input type="radio" name="radio-btn" id="img-3" />
+        <li class="slide-container">
+            <div class="slide">
+              <img src="http://farm9.staticflickr.com/8068/8250438572_d1a5917072_z.jpg" />
+            </div>
+    <div class="nav">
+    <label for="img-2" class="prev">&#x2039;</label>
+    <label for="img-4" class="next">&#x203a;</label>
+    </div>
+        </li>
+    
+        <input type="radio" name="radio-btn" id="img-4" />
+        <li class="slide-container">
+            <div class="slide">
+              <img src="http://farm9.staticflickr.com/8061/8237246833_54d8fa37f0_z.jpg" />
+            </div>
+    <div class="nav">
+    <label for="img-3" class="prev">&#x2039;</label>
+    <label for="img-5" class="next">&#x203a;</label>
+    </div>
+        </li>
+    
+        <input type="radio" name="radio-btn" id="img-5" />
+        <li class="slide-container">
+            <div class="slide">
+              <img src="http://farm9.staticflickr.com/8055/8098750623_66292a35c0_z.jpg" />
+            </div>
+    <div class="nav">
+    <label for="img-4" class="prev">&#x2039;</label>
+    <label for="img-6" class="next">&#x203a;</label>
+    </div>
+        </li>
+    
+        <input type="radio" name="radio-btn" id="img-6" />
+        <li class="slide-container">
+            <div class="slide">
+              <img src="http://farm9.staticflickr.com/8195/8098750703_797e102da2_z.jpg" />
+            </div>
+    <div class="nav">
+    <label for="img-5" class="prev">&#x2039;</label>
+    <label for="img-1" class="next">&#x203a;</label>
+    </div>
+        </li>
+    
+        <li class="nav-dots">
+          <label for="img-1" class="nav-dot" id="img-dot-1"></label>
+          <label for="img-2" class="nav-dot" id="img-dot-2"></label>
+          <label for="img-3" class="nav-dot" id="img-dot-3"></label>
+          <label for="img-4" class="nav-dot" id="img-dot-4"></label>
+          <label for="img-5" class="nav-dot" id="img-dot-5"></label>
+          <label for="img-6" class="nav-dot" id="img-dot-6"></label>
+        </li>
+    </ul>
     </section>
 
 
