@@ -62,6 +62,8 @@ function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("mySlides");
   var dots = document.getElementsByClassName("dot");
+  var prev = document.getElementsByClassName('prev');
+  var next = document.getElementsByClassName('next');
 
   if (n > slides.length) {
     slideIndex = 1
