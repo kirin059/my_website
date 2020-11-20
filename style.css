@@ -89,6 +89,7 @@ html {
     justify-content: space-between;  /* 각 div 사이의 공간을 균등하게 배분 */
     align-items: center;
     padding: 8px 12px;
+    color: var(--text-color);
 }
 
 a {
@@ -100,12 +101,12 @@ a {
     font-size: 32px;
     margin-left: 10px;
     font-weight: var(--weight-bold);   
-    cursor: pointer;
 }
 .navbar_logo i{
     color:var(--icon-color);
     opacity: 0.9;
 }
+
 /* .navbar_logo:hover{
     background-color: var(--point-color);
     border-radius: 10px;
@@ -140,6 +141,9 @@ a {
 .navbar_icon li{ 
     padding: 8px 12px;
     font-size: 35px;
+}
+.navbar_icon a{ 
+    color:var(--icon-color);
 }
 .navbar_toggleBtn{
     display:none;   /* display:none;을 해줌으로서 일반 화면에는 나오지 않고 미디어쿼리에 display:block;를 적용하여 화면이 작아질때만 block으로 나오게 한다 */
@@ -196,9 +200,11 @@ section{
     margin:0;
     padding:0;
 }
-header{
+
+  /* ----------Section(1)---------- */
+.clock{
     width:100%;
-    height:300px;
+    height:150px;
     background-color:black;
 }
 h1 {
@@ -207,16 +213,108 @@ h1 {
     color:var(--text-color);
     text-align: center;
   }
-main{
-    background-color: var(--point-color);
+
+  /* ----------Section(2)---------- */
+.mySlides {
+    width:100%;
+    height:250px;
 }
-.home_img{
-    padding: 80px;
-    text-align:center;
+img {
+    vertical-align: middle;
 }
 
+/* Slideshow container */
+.slideshow-container {
+    max-width: 100%;       /* 또는 1000px로 지정 가능 */
+    position: relative;
+    margin: auto;
+}
+    
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;   /* 부모태그(.slideshow-container)에 position:relative를 적용하였기에 absolute로 위치 지정 가능(기본 왼쪽 정렬) */
+    top: 45%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 50px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    }
+    
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;           /* absulute는 기본 왼쪽정렬이기 때문에 righ:0; 값을 지정하여 오른쪽으로 위치를 조절한다 */
+      border-radius: 3px 0 0 3px;
+    }
+    
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+    
+    /* Caption text */
+    .text {
+      color: #f2f2f2;
+      font-size: 35px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+    
+    /* The dots/bullets/indicators */
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: #725275 0.6s ease;
+    }
+    
+    .active, .dot:hover {
+      background-color: #725275;
+    }
+    
+    /* Fading animation */
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+    /*
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+    */
+    
+    @keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
+    /*
+    @-webkit-keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
+    */
+    
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+      .prev, .next,.text {font-size: 11px}
+    }
 
+      /* ----------Section(3)---------- */
+.header3{
+    width:100%;
+    height:400px;
 
+}
   /* Footer */
 footer{
     grid-row-start:3;
@@ -233,7 +331,20 @@ footer i{
 
 
 
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Home  */
 #home {

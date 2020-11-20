@@ -3,69 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <meta name = "describtion" content = "flex">
+    <title>Kirin Web</title>
+    <meta name = "describtion" content = "javascript">
+    <meta name = "keyword" content = "javascript, css, html, work">
     <meta name = "author" content = "kirin">
     
-    <!-- <link rel="icon" type = "image/png" href = "images/favicon.png"> -->
+    <!-- 
+    <link rel="icon" type = "image/png" href = "images/favicon.png"> 
+    -->
     
-   <!-- Font Awesome icons (free version)-->
+    <!-- Font Awesome icons (free version)-->
     <script src="https://kit.fontawesome.com/d521151761.js" crossorigin="anonymous"></script>
  
-     <!-- Google fonts (웹사이트에서 'link 코드' html에 넣고 css의 body에 따로 적용) -->
+    <!-- Google fonts (웹사이트에서 'link 코드' html에 넣고 css의 body에 따로 적용) -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;700&display=swap" rel="stylesheet">
     
     <link rel = "stylesheet" href = "style.css"/>
 
-    <!-- code for javascript / option: defer(html 파일 실행 완료 후 javascript 실행) -->
-    <script defer src="main.js" ></script>
+    <!--javascript_____defer( html parsing과 스크립트 fetch를 병렬진행하여 html parsing 완료 후 javascript 실행) -->
+    <script defer src="index.js"></script>  
 </head>
 <body>
     <!-- Navigation-->
     <nav class="navbar">
         <div class="navbar_logo">
             <i class="fas fa-cat"></i>
-            <a href="kirinworld.html">kirin</a>
+            <span>kirin</span>
         </div>
        
         <ul class="navbar_menu">
             <li><a href="index.html">Home</a></li>
-            <li><a href="">submit</a></li>
-            <li><a href="">game</a></li>
-            <li><a href="">Q&A</a></li>
-            <li><a href="">summury</a></li>
+            <li><a href="">Submit</a></li>
+            <li><a href="game.html">Game</a></li>
+            <li><a href="">Quiz</a></li>
+            <li><a href="">Summury</a></li>
         </ul>
 
         <ul class="navbar_icon">
-            <li><i class="fab fa-instagram-square"></i></li>
-            <li><i class="fab fa-facebook-square"></i></li>
+            <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram-square"></a></i></li>
+            <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></a></i></li>
         </ul>
 
         <a href="#" class="navbar_toggleBtn">
             <i class="fas fa-bars"></i>
         </a>
     </nav>
+
+
+
     <!-- Section-->
     <section>
-        <header>
-            <h1>이곳에는 제목을 적겠다</h1> 
-            <!-- 3초마다 이미지 가로로 이동하게 만들어보자 -->
-        </header>
-        <main>
-            <div class="home_img">
-            <img style="width:500px; height:350px; padding-bottom:50px;" src="main_image1.jpg" />
-            <img style="width:700px; height:400px; padding-left:50px;" src="main_image2.jpg" />
-            <img src="main_image3.jpg" />
-            <img style="width:500px; height:440px; padding-left:50px;" src="main_image4.jpg" />
-            <img style="width:400px; height:400px; padding-left:50px;" src="main_image5.jpg" />
-            </div>
-        </main>
+
+        <!--시계 넣기-->
+    <div class="clock"> 
+        <!--
+        <div class="js-clock">
+            <span class="js-title"></span>
+            <script src="clock.js"></script>
+        </div>
+        -->            
+    </div>
+
+   <!--https://kutar37.tistory.com/entry/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C%EC%87%BC-%EA%B5%AC%ED%98%84-cssjavascriptjquery -->
+            
+    <!--슬라이드 이미지1-->    
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">   <!--mySlides와 fade라는 class를 2개 적용한 것-->
+            <img src="image01.jpg" alt="cherry image" style="width:100%; height:265px;" />
+            <div class="text">Love Cherry</div>
+        </div>
+                
+        <div class="mySlides fade">
+            <img src="image02.jpg" alt="orange image" style="width:100%; height:265px;" />
+            <div class="text">Love Orange</div>
+        </div>
+                
+        <div class="mySlides fade">
+            <img src="image03.jpg" alt="banana image" style="width:100%; height:265px;" />
+            <div class="text">Love Banana</div>
+        </div>
+                
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>   <!-- &#10094 는 '<' 부호를 뜻함 -->
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>    <!-- &#10095 는 '>' 부호를 뜻함 -->
+    </div>
+        <br>
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+        </div>
+    
+       
+    <div class="header3">
+
+    </div>
     </section>
+
+
+
+    <!-- Footer-->
     <footer>
-        <span>Contact</span><i class="fas fa-envelope-square"></i>
+        <div>Contact<i class="fas fa-envelope-square"></i></div>
+        <input type="button" value="dark" onclick="document.body.className='dark'" />
     </footer>
    
-   
+<script>
+    var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+
+  if (n > slides.length) {
+    slideIndex = 1
+  }    
+  if (n < 1) {
+    slideIndex = slides.length
+  }
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+
 </body>
 </html>
