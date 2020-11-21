@@ -1,0 +1,731 @@
+/* Global */
+
+
+:root {
+    /* Color */
+    --text-color: #f0f4f5;
+    --icon-color: #ffc7c7;
+    --point-color: #feb546;
+    --black: #000000;
+    --light-grey: #7c7979;
+    --navy: #203A43;
+  
+    /* Font size */
+    --font-large: 48px;
+    --font-medium: 28px;
+    --font-regular: 18px;
+    --font-small: 16px;
+  
+    /* Font weight */
+    --weight-bold: 700;
+    --weight-semi-bold: 600;
+    --weight-nomal: 400;
+}
+    /* Size
+    --size-border-radius: 25px;
+  }
+  */
+  
+
+  
+  h2 {
+    font-size: var(--font-medium);
+    font-weight: var(--weight-semi-bold);
+    color: var(--black);
+    margin: 8px 0;
+  }
+  
+  h3 {
+    font-size: var(--font-regular);
+    font-weight: var(--weight-regular);
+    color: var(--black);
+    margin: 8px 0;
+  }
+  
+  p {
+    font-size: var(--font-regular);
+    font-weight: var(--weight-regular);
+    color: var(--black);
+    margin: 4px 0;
+  }
+
+
+
+/*
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+button {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+*/
+
+* {
+    box-sizing: border-box;
+    margin:0;
+}
+html {
+    scroll-behavior: smooth;
+  }
+
+ /* Grid */
+   body{
+    display: grid;
+    grid-template-rows: 100px 3fr 1fr;
+    font-family: 'Source Sans Pro';  /* html에 적용하고자 하는 폰트의 link 적용 후, 해당 font-family 내용 body에 적용하기 */
+}
+
+.navbar {
+    grid-row-start:1;
+    grid-row-end: 2;
+    background: linear-gradient(#0F2027, #2C5364,#0F2027);
+    width: 100%;
+    display: flex;    
+    justify-content: space-between;  /* 각 div 사이의 공간을 균등하게 배분 */
+    align-items: center;
+    padding: 8px 12px;
+    color: var(--text-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.navbar_logo {
+    font-size: 32px;
+    margin-left: 10px;
+    font-weight: var(--weight-bold);   
+}
+.navbar_logo i{
+    color:var(--icon-color);
+    opacity: 0.9;
+}
+
+/* .navbar_logo:hover{
+    background-color: var(--point-color);
+    border-radius: 10px;
+} */
+
+.navbar_menu {
+    display: flex;
+    list-style: none;
+    padding-left:0;  /* 기본적으로 padding-left값이 적용되어 있기 때문에 0으로 바꿔주면 중앙배치 완료 */
+    font-size: 20px;
+    color:var(--text-color);
+    font-weight: var(--weight-nomal);
+}
+.navbar_menu li {
+    padding: 8px 23px;  /* padding(0px 0px) = 위+아래, 좌+우 와 같다. 즉 위+아래 8px, 좌+우 12px로 적용한 것 */
+    margin: 0px 6px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.navbar_menu li:hover{
+    background-color: var(--point-color);
+    border-radius: 10px;
+}
+
+
+.navbar_icon {  
+    list-style: none;
+    color:var(--icon-color);
+    display: flex;
+    padding-left:0;
+}
+.navbar_icon li{ 
+    padding: 8px 12px;
+    font-size: 35px;
+}
+.navbar_icon a{ 
+    color:var(--icon-color);
+}
+.navbar_toggleBtn{
+    display:none;   /* display:none;을 해줌으로서 일반 화면에는 나오지 않고 미디어쿼리에 display:block;를 적용하여 화면이 작아질때만 block으로 나오게 한다 */
+    position:absolute;
+    right: 32px;  /* right값을 설정하지 않으면 기본 왼쪽 상단에 위치한다. right값을 적용하면 해당 값만큼 오른쪽에 떨어져서 위치한다. */
+    font-size: 24px;
+    color:var(--point-color);
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+        width:100%;
+        height: auto;
+        padding: 8px 24px;
+    }
+    .navbar_logo{
+        width:100%;
+        text-align: center;
+    }
+    .navbar_menu {
+        display: none;   /* toggleBtn을 눌렀을때 나오도록 만들기 위해, 기본적으로  display: none;을 적용해준다 */
+        flex-direction: column;
+        align-items: flex-start;
+        width:100%;
+    }
+    .navbar_menu li{
+        width:100%;
+        text-align: center;
+    }
+    .navbar_icon { 
+        display: none;   /* toggleBtn을 눌렀을때 나오도록 만들기 위해, 기본적으로  display: none;을 적용해준다 */
+        justify-content: center;
+        width:100%;
+        padding-left:0;
+    }
+    .navbar_toggleBtn{
+        display:block;
+    }
+    .navbar_menu.active, .navbar_icon.active{
+        display: flex;
+    }
+}
+
+
+/* Section  */
+section{
+    grid-row-start:2;
+    grid-row-end: 3;
+    margin:0;
+    padding:0;
+}
+
+/* ----------Section(1)clock---------- */
+.clock{
+    width:100%;
+    height:150px;
+    background-color:var(--point-color);
+    text-align: center;
+    vertical-align: center;
+    font-size: 100px;
+    font-weight: var( --weight-bold);
+}
+h1 {
+    font-size: var(--font-large);
+    font-weight: var(--weight-bold);
+    color:var(--point-color);
+    text-align: center;
+  }
+
+/* ----------Section(2)img_sliding---------- */
+.mySlides {
+    width:100%;
+    height:400px;
+}
+img {
+    vertical-align: middle;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 100%;       /* 또는 1000px로 지정 가능 */
+    position: relative;
+    margin: auto;
+}
+    
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;   /* 부모태그(.slideshow-container)에 position:relative를 적용하였기에 absolute로 위치 지정 가능(기본 왼쪽 정렬) */
+    top: 45%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 50px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    }
+    
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;           /* absulute는 기본 왼쪽정렬이기 때문에 righ:0; 값을 지정하여 오른쪽으로 위치를 조절한다 */
+      border-radius: 3px 0 0 3px;
+    }
+    
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+    
+    /* Caption text */
+    .text {
+      color: #f2f2f2;
+      font-size: 35px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+    }
+    
+    /* The dots/bullets/indicators */
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: #725275 0.6s ease;
+    }
+    
+    .active, .dot:hover {
+      background-color: #725275;
+    }
+    
+    /* Fading animation */
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+    /*
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+    */
+    
+    @keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
+    /*
+    @-webkit-keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
+    */
+    
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+      .prev, .next,.text {font-size: 11px}
+    }
+
+
+
+/* ----------Section(3)img_sliding---------- */
+
+@import url(https://fonts.googleapis.com/css?family=Varela+Round);
+
+.slides {
+    padding: 0;
+    width: 609px;
+    height: 600px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    user-select: none;
+}
+
+.slides input { 
+    display: none; 
+}
+
+.slide-container { 
+    display: block; 
+    padding: 30px;
+}
+
+.slide {
+    top: 0;
+    opacity: 0;
+    width: 609px;
+    height: 420px;
+    display: block;
+    position: absolute;
+    transform: scale(0);
+    transition: all .7s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    padding-top:70px;
+}
+
+.navi label {
+    width: 200px;
+    height: 100%;
+    display: none;
+    position: absolute;
+    opacity: 0;
+    z-index: 9;
+    cursor: pointer;
+    transition: opacity .2s;
+    color: rgb(236, 70, 70);
+    font-size: 156px;
+    text-align: center;
+    line-height: 380px;
+    background-color: rgba(255, 255, 255, .3);
+    text-shadow: 0px 0px 15px rgb(119, 119, 119);
+}
+
+.slide:hover + .nav label { 
+    opacity: 0.5; 
+}
+
+.navi label:hover { 
+    opacity: 1; 
+}
+
+.navi .next { 
+    right: 0; 
+}
+
+input:checked + .slide-container  .slide {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .nav label { 
+    display: block; 
+}
+
+.nav-dots {
+width: 100%;
+bottom: 9px;
+height: 20px;
+display: block;
+position: absolute;
+top:450px;
+text-align: center;
+}
+
+.nav-dots .nav-dot {
+top: -5px;
+width: 11px;
+height: 11px;
+margin: 0 4px;
+position: relative;
+border-radius: 100%;
+display: inline-block;
+background-color: rgba(0, 0, 0, 0.6);
+}
+
+.nav-dots .nav-dot:hover {
+cursor: pointer;
+background-color: rgba(0, 0, 0, 0.8);
+}
+
+input#img-1:checked ~ .nav-dots label#img-dot-1,
+input#img-2:checked ~ .nav-dots label#img-dot-2,
+input#img-3:checked ~ .nav-dots label#img-dot-3,
+input#img-4:checked ~ .nav-dots label#img-dot-4,
+input#img-5:checked ~ .nav-dots label#img-dot-5,
+input#img-6:checked ~ .nav-dots label#img-dot-6 {
+background: rgba(0, 0, 0, 0.8);
+}
+
+
+
+
+
+ 
+
+
+  /* Footer */
+footer{
+    grid-row-start:3;
+    grid-row-end: 4s;
+    font-size: 25px;
+    font-weight: var( --weight-bold);
+    padding:8px 24px;
+    text-align: center;
+}
+footer i{
+    color:var(--icon-color);
+    font-size: 40px;
+    padding:8px 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Home  */
+#home {
+    padding: 80px 0px 0px 0px;
+    margin: auto;
+    color: var(--color-black);
+    
+}
+
+.home__container__upper {
+    display: flex;
+    flex: space-between;
+    align-items: center;
+    font-family: "Nanum Gothic";
+    margin: 0px 0px;
+}
+
+.home__container__upper__left {
+    flex-basis: 80%;
+}
+.home__sns {
+    display: flex;
+
+}
+.home__sns__item {
+    
+    margin-bottom: 20px;
+    padding-left: 12px;
+    
+   
+}
+.home__sns__item a{
+    display: flex;
+    color: var(--navy);
+}
+
+.home__sns__item i:hover{
+    color: var(--color-dark-pink);
+}
+
+
+
+.home__container__under a {
+    color: black;
+    margin: 0px 0px;
+}
+
+.home__container__under {
+    margin: 20px 0px 10px 0px;
+    text-align: center;
+    
+}
+
+.blog__address {
+    text-align: left;
+    /* font-weight: var(--weight-semi-bold); */
+}
+
+.email__address {
+    text-align: left;
+    /* font-weight: var(--weight-semi-bold); */
+}
+
+
+/* button  */
+
+.home__contact {
+    margin: 50px 0px 0px 0px;
+}
+.home__contact a {
+
+    color: var(--color-navy);
+    font-size: var(--font-regular);
+    font-weight: var(--weight-bold);
+    text-align: center;
+    padding: 8px;
+    border: 2px solid var(--color-navy);
+    border-radius: var(--size-border-radius);
+}
+.home__contact:hover {
+    color: var(--color-dark-pink);
+    border-color: var(--color-dark-pink);
+}
+.home__contact a:hover {
+    color: var(--color-dark-pink);
+    border-color: var(--color-dark-pink);
+}
+
+/* Section common */
+.section {
+    padding: 50px;
+    text-align: center;
+    margin: auto;
+  
+}
+
+.section__container {
+    margin: auto;
+    max-width: 50rem;
+    padding: 2.4375rem 1.21875rem;
+}
+
+
+/* About  */
+#about {
+    max-width: 50rem;
+    padding: 2.4375rem 1.21875rem;
+    padding-top: 90px;
+    font-family: "나눔고딕";
+    margin-bottom: 10px;
+    text-align: center;
+    
+}
+.about__avatar{
+    
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 3px solid var(--color-navy);
+}
+
+.education {
+    margin-top: 30px;
+    text-align: left;
+    padding: 5px 100px;
+    font-family: "나눔고딕";
+    
+}
+
+.experience__title {
+    text-align: left;
+    padding: 5px 100px;
+    font-family: "나눔고딕";
+}
+
+.company {
+    text-align: left;
+    padding: 0px 100px;
+    
+}
+
+.about__description {
+    text-align: left;
+    padding: 50px 100px 0px 100px;
+    font-family: "나눔고딕";
+    /* border: 2px solid var(--color-navy); */
+}
+
+.about__description ul {
+ 
+    
+}
+.about__description li {
+   
+    padding: 5px 0px;
+}
+
+/* Skills  */
+#skills {
+    
+   background-color: var(--color-pink);
+    /* background: linear-gradient(45deg, #0F2027,#203A43, #2C5364); */
+    
+}
+
+
+.skill {
+    margin-bottom: 10%;
+}
+
+.skillset {
+    
+    display: flex;
+    background-color: var(--color-dark-white);
+}
+
+
+.skillset__left {
+    flex-basis: 60%;
+    background-color: var(--color-white);
+    padding: 20px 40px;
+   
+
+}
+.skillset__right {
+    flex-basis: 40%;
+    margin: 0px;
+    border:0;
+    padding: 0;
+}
+
+.skill__title {
+   font-weight: bold;
+   margin-bottom: 20px;
+}
+.language__title {
+    font-weight: bold;
+    margin-bottom: 20px;
+ }
+ .etc__title {
+    font-weight: bold;
+    margin-bottom: 20px;
+ }
+
+.skill__description {
+    display: flex;
+    justify-content: space-between;
+}
+
+.skill__bar {
+    width: 100%;
+    height: 3px;
+    background-color: rgb(226, 225, 225);
+}
+
+.skill__value {
+    height: 3px;
+    background-color: var(--color-navy);
+}
+
+.tools {
+    padding: 5px;
+    background-color: var(--color-yellow);
+  
+}
+
+.language {
+    padding: 5px;
+    background-color: var(--color-orange);
+    
+}
+
+#projects {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+}
+
+
+
+.projects__wrapper {
+    text-align: center;
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+ 
+}
+
+.project__image {
+    width: 280px;
+    height: 250px;
+}
+
+
+.project_description {
+    margin: 50px;
+    width: 100%;
+    height: 100%;
+   
+}

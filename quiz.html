@@ -16,10 +16,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;700&display=swap" rel="stylesheet">
     
-    <link rel = "stylesheet" href = "game.css"/>
+    <link rel = "stylesheet" href = "quiz.css"/>
 
     <!-- code for javascript / option: defer(html 파일 실행 완료 후 javascript 실행) -->
-    <script defer src="game.js" ></script>
+    <script defer src="quiz.js" ></script>
 </head>
 <body>
     <!-- Navigation-->
@@ -47,64 +47,22 @@
     </nav>
 
 
-
     <!-- Section-->
     <section>
-     
-        <form name="math">
-            <table>
-                    <caption>🔶🔹 Math Game 🔸🔷</caption>
-                <tr>
-                    <td colspan="2">
-                    <input type="button" value="New Game" onClick="location.reload();" style="width:100%">
-                    </td>
-                </tr>
-    
-                <tr>
-                    <td colspan="2">
-                    <input type="button" value="Game Start" size="5" onClick="startgame()" style="width:100%">
-                    </td>
-                </tr>
-    
-                <tr>
-                    <td> <strong>rest of time</strong> </td>
-                    <td>
-                    <input type="text" name="timer" size="10">
-                    </td>
-                </tr>
-    
-                <tr>
-                    <td><strong>Question</strong></td>
-                    <td>
-                    <input type="text" name="firstnum" size="7">
-                    <input type="text" name="operator" size="2">
-                    <input type="text" name="secondnum" size="7">
-                    </td>
-                </tr>
-    
-                <tr>
-                    <td><strong>Answer</strong></td>
-                    <td>
-                    <input type="text" name="answer" size="7">
-                    </td>
-                </tr>
-    
-                <tr class="answer">
-                    <td colspan="2" style="text-align:center">
-                    <input type="button" value="Submit and Check Answer" onClick="answerit();">
-                    </td>
-                </tr>
-    
-                <tr>
-                    <td><strong>Score</strong></td>
-                    <td>
-                    <input type="text" name="points" size="7" value="0">
-                    </td>
-                </tr>
-            </table>
-        </form>
-
-<!----------Section(2)??? game---------->         
+        <div class="grid">
+            <h1>🙋‍♀️ Quiz Quiz 🙋‍♂️</h1>
+            <div id="quiz">
+               <p id="question"></p>
+         
+               <div class="buttons">
+                  <button class="btn"></button>
+                  <button class="btn"></button>
+                  <button class="btn"></button>
+                  <button class="btn"></button>
+               </div>
+            </div>
+        </div>
+       
     </section>
 
 
