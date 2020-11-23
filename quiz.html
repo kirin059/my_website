@@ -19,13 +19,14 @@
     <link rel = "stylesheet" href = "quiz.css"/>
 
     <!-- code for javascript / option: defer(html 파일 실행 완료 후 javascript 실행) -->
+    <script defer src="index.js" ></script>
     <script defer src="quiz.js" ></script>
 </head>
 <body>
     <!-- Navigation-->
     <nav class="navbar">
         <div class="navbar_logo">
-            <i class="fas fa-cat"></i>
+            <i classs="fas fa-cat"></i>
             <a href="kirinworld.html">kirin</a>
         </div>
        
@@ -33,7 +34,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="game.html">Game</a></li>
             <li><a href="quiz.html">Quiz</a></li>
-            <li><a href="">Visitors voice</a></li>
+            <li><a href="vv.html">Visitors voice</a></li>
         </ul>
 
         <ul class="navbar_icon">
@@ -70,8 +71,10 @@
     <!-- Footer-->
     <footer>
         <div>Contact<i class="fas fa-envelope-square"></i></div>
-        <input type="button" value="dark" onclick="document.body.className='dark'" />
-    </html>
+        <input type="button" value="night" onclick="
+        var target=document.querySelector('body')
+        handler(this);
+        ">
     
     </footer>
    

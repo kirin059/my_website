@@ -225,12 +225,6 @@ a {
     text-align: center;
  }
  
- /*
- #progress {
-    font-size: 20px;
-    color: #2b2b2b;
- }
-*/
  .buttons {
     padding: 30px 20px;
     border: 2px solid #eed0dc;
@@ -255,12 +249,13 @@ a {
     margin-right: 0;
  }
  
- .btn:visited{
-    text-decoration: none;
-}
+
  .btn:hover {
     background: #c34c74;
     color: #fff;
+ }
+ .btn:active {
+    text-decoration: none;
  }
 
 

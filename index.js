@@ -1,6 +1,6 @@
-window.onload = function () {
-  
-/* navbar javascript */
+"use strict";
+
+/* navbar */
 const toggleBtn = document.querySelector('.navbar_toggleBtn');
 const menu = document.querySelector('.navbar_menu');
 const icon = document.querySelector('.navbar_icon');
@@ -11,19 +11,24 @@ toggleBtn.addEventListner('click', function() {
     });
 
 
-/* ----------Section(1)_clock---------- */ 
-const clockContainer=document.querySelector(".js-clock"),
-      clockTitle= clockContainer.querySelector("span");
+/* Section(1)_clock*/ 
+const clock=document.querySelector('.main-clock');
 
-      function getTime(){
-        const date = new Date();
-        const minutes = date.getMinutes();
-        const hours = date.getHours();
-        const seconds = date.getSeconds();
-        clockTitle.innerText = `${
-          hours <10 ? `0${hours}` : hours}:${
-          minutes < 10 ? `0${minutes}` : minutes}:${
-          seconds < 10 ? `0${seconds}` : seconds}`;
+      function getTime() {
+        const time = new Date();
+        const minutes = time.getMinutes();
+        const hours = time.getHours();
+        const seconds = time.getSeconds();
+        //clock.innerHTML = hour + ":" + minutes + ":" + seconds;
+        clock.innerHTML = `${                      /* 시간이 두자리로 나오게 하는 명령문 */
+          hours <10 ? `0${hours}` : hours
+          }
+          :${    
+          minutes < 10 ? `0${minutes}` : minutes
+          }
+          :${
+          seconds < 10 ? `0${seconds}` : seconds
+          }`
       }
 
       function init(){
@@ -39,14 +44,14 @@ function color(red, blue){
 }
 document.write(color("peru", "purple"));
 이런식으로 인자 x,y를 지정해준 뒤 해당 값을 리턴할 때, ${리턴인자}를 넣어준다
-그리고 ? = if 와 같은개념 / : = or 과 같은개념
+그리고 ? 는 if 와 같은개념,  : 는 or 과 같은개념
 ${ hour < 10 ? `0${hour}` : hours }
 hour가 10보다 작으면(if) `0을 hour앞에 붙여주고` 그렇지않으면(:) 그냥 hour를 써준다는 뜻
 */
 
 
 
-/* ----------Section(2)_img sliding---------- */
+/* Section(2)_img sliding */
 var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -79,8 +84,76 @@ function showSlides(n) {
   }
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000);
 }
 
+
+
+
+/* footer */
+
+/*
+function handler(self){
+    var target=document.querySelector('body')
+    if(self.value==='night') {
+      target.style.backgroundColor='black';
+      target.style.color='white';
+      document.querySelector('#click').value='day';
+          var alist=document.querySelectorAll('a');
+          var i=0;
+          while(i < alist.length){
+            alist[i].style.color='powderblue';
+            i=i+1;
+          }
+    } else {
+      target.style.backgroundColor='white';
+      target.style.color='black';
+      this.value='night';
+          var alist=document.querySelectorAll('a');
+          var i=0;
+          while(i < alist.length){
+            alist[i].style.color='blue';
+            i=i+1;
+          }
+      }
+  }
+  */
+
+
+ var Body = {
+  setBackColor : function(color) {
+  document.querySelector('body').style.backgroundColor=color;
+  },
+  setColor : function(color) {
+    document.querySelector('body').style.color=color;
+  }
 }
 
+var Link = {
+  setColor : function (color){
+    var alist=document.querySelectorAll('a');
+    var i = 0;
+    while(i < alist.length){
+      alist[i].style.color=color;
+      i=i+1;
+    }
+  }
+}
 
+function handler(self){
+    var target=document.querySelector('body')
+    if(self.value==='night') {
+      Body.setBackColor('black');
+      Body.setColor('white');
+      self.value='day';
+
+        Link.setColor('powderblue');
+
+    } else {
+      Body.setBackColor('white');
+      Body.setColor('black');
+      self.value='night';
+
+        Link.setColor('blue');
+      }
+  }

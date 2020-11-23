@@ -1,3 +1,6 @@
+"use strict";
+
+/* 퀴즈 점수, 문제 데이터, 문제 번호도 하나의 퀴즈 정보 객체로 구성하기 위해 생성자 함수(function)로 정의하기 */
 // 문제 객체(생성자 함수)
 function Question(text, choice, answer) {
     this.text = text;      // 질문 텍스트
@@ -9,14 +12,15 @@ function Question(text, choice, answer) {
  function Quiz(questions) {
     this.score = 0;             // 점수
     this.questions = questions; // 문제
-    this.questionIndex = 0;     // 문제 번호
+    this.questionIndex = 0;     // 진행중인 문제 번호
  }
  
  // 정답 확인 메서드
- Quiz.prototype.correctAnswer = function(answer) {
-    return answer == this.questions[this.questionIndex].answer;
+ Quiz.prototype.correctAnswer = function(answer) {      //correctAnswer 는 Quiz 생성자의 prototype 속성으로 정의 -> correctAnswer 프로토타입 속성값은 익명함수가 되기때문에 메서드가 된다.
+    return answer == this.questions[this.questionIndex].answer;  //변수 answer(사용자가 입력하는 답)가 this.questions[this.questionIndex].answer 가 가진 문제의 정답 정보와 비교하여 값이 같으면 true, 아니면 false반환(정답여부 판정)
  }
  
+ // 배열 변수 questions를 선언하고 문제를 추가한다
  var questions = [
     new Question('다음 중 과일이 아닌 것은?', ['파인애플', '딸기', '토마토', '사과'], '토마토'),
     new Question('다음 중 키가 170cm 이하인 여배우는?', ['Blake Lively', 'Julia Roberts', 'Gwyneth Kate Paltrow', 'Natalie Portman'], 'Natalie Portman'),
@@ -27,18 +31,18 @@ function Question(text, choice, answer) {
     new Question('다음 중 표현법이 다른 하나는?', ['이것은 소리 없는 아우성', '즐거운 비명', '찬란한 슬픔의 봄', '죽어도 아니 눈물 흘리오리다'], '죽어도 아니 눈물 흘리오리다')
  ];
  
- // 퀴즈 객체 생성
+ // 퀴즈 객체 생성 (quiz객체 속성은 위에서 정의한 것처럼, score는 0(초기값), questions는 new Question(text,choice, answer), questionIndex는 0(초기값으로 문제 진행 번호))
  var quiz = new Quiz(questions);
  
  // 문제 출력 함수
  function updateQuiz() {
     var question = document.getElementById('question');
-    var idx = quiz.questionIndex + 1;
-    var choice = document.querySelectorAll('.btn');
+    var idx = quiz.questionIndex + 1;         //문제번호
+    var choice = document.querySelectorAll('.btn');    
  
     // 문제 출력
     question.innerHTML = '문제' + idx + ') ' + quiz.questions[quiz.questionIndex].text;
- 
+                                               //현재 출제되고 있는 문제 텍스트(배열)
     // 선택 출력
     for (var i = 0; i < 7; i++) {
        choice[i].innerHTML = quiz.questions[quiz.questionIndex].choice[i];
@@ -55,7 +59,7 @@ function Question(text, choice, answer) {
  var btn = document.querySelectorAll('.btn');
  
  // 입력 및 정답 확인 함수
- function checkAnswer(i) {
+ function checkAnswer(i) {           //4개의 버튼으로 사용자가 선택한 답을 입력받고 정답을 처리하는 함수  = checkAnswer() 함수
     btn[i].addEventListener('click', function() {
        var answer = btn[i].innerText;
  

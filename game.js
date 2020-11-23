@@ -1,7 +1,11 @@
+"use strict";
+
 /* number game */
 var time=50; // 게임 시간 - 50초
 var timesup=0;
 var started=0;
+
+/* timer */
 
 function CountDown() {
 	if(time>0) {
@@ -20,6 +24,7 @@ function CountDown() {
 	}
 }
 
+/* game start */
 function startgame() {
     if (started!=0) { 
         alert('이미 게임을 하셨습니다.\n\n새게임 버튼을 누르시고 다시 해주세요.');
@@ -72,7 +77,7 @@ function getProb() {
         rightanswer=choose1 / choose2;
     }
 }
-    
+/* answer submit */    
 function answerit() {
     if (started==0) {
         // 시작하지 않고 바로 답버튼을 눌렀을때

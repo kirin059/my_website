@@ -202,9 +202,10 @@ section{
 }
 
 /* ----------Section(1)clock---------- */
-.clock{
+.clock-location{
     width:100%;
     height:150px;
+    margin: auto;
     background-color:var(--point-color);
     text-align: center;
     vertical-align: center;
@@ -217,6 +218,7 @@ h1 {
     color:var(--point-color);
     text-align: center;
   }
+
 
 /* ----------Section(2)img_sliding---------- */
 .mySlides {
