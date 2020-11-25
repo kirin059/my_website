@@ -20,12 +20,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;700&display=swap" rel="stylesheet">
     
     <link rel = "stylesheet" href = "index.css"/>
-
-    <!--defer( html parsing과 스크립트 fetch를 병렬진행하여 html parsing 완료 후 javascript 실행) -->
-    <script defer src="index.js" ></script>  
+    <script defer src="index.js" ></script> 
 
 </head>
 <body>
+
   <!-- Navigation-->
     <nav class="navbar">
         <div class="navbar_logo">
@@ -55,172 +54,106 @@
   <!-- Section-->
     <section>
 
-  <!--Section(1)clock-->
-    <div class="clock-location"> 
-        <div class="main-clock"></div>  
-    </div>
+      <!--(1)clock-->
+      <div class="clock-location"> 
+          <div class="main-clock"></div>  
+      </div>
 
-    <script>
-    const clock=document.querySelector('.main-clock');
+              
+      <!--(2)img_sliding-->  
+      <div class="slideshow-container">
 
-    function getTime() {
-      const time = new Date();
-      const minutes = time.getMinutes();
-      const hours = time.getHours();
-      const seconds = time.getSeconds();
-      //clock.innerHTML = hour + ":" + minutes + ":" + seconds;
-      clock.innerHTML = `${                      /* 시간이 두자리로 나오게 하는 명령문 */
-        hours <10 ? `0${hours}` : hours
-        }
-        :${    
-        minutes < 10 ? `0${minutes}` : minutes
-        }
-        :${
-        seconds < 10 ? `0${seconds}` : seconds
-        }`
-    }
+          <div class="mySlides fade">   <!--mySlides와 fade라는 class를 2개 적용한 것-->
+              <img src="image01.jpg" alt="" style="width:100%; height:410px;" />
+              <div class="text">Little by little does the trick</div>
+          </div>
+                  
+          <div class="mySlides fade">
+              <img src="image02.jpg" alt="" style="width:100%; height:410px;" />
+              <div class="text">You will never know until you try</div>
+          </div>
+                  
+          <div class="mySlides fade">
+              <img src="image03.jpg" alt="" style="width:100%; height:410px;" />
+              <div class="text">Whatever you do, make it pay</div>
+          </div>
+                  
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>   <!-- &#10094 는 '<' 부호를 뜻함 -->
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>    <!-- &#10095 는 '>' 부호를 뜻함 -->
 
-    function init(){
-        getTime();
-        setInterval(getTime, 1000);
-    }
+      </div>
 
-    init();
-  </script>
-
-   <!--https://kutar37.tistory.com/entry/%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C%EC%87%BC-%EA%B5%AC%ED%98%84-cssjavascriptjquery -->
-            
-  <!--Section(2)img_sliding-->  
-    <div class="slideshow-container">
-
-        <div class="mySlides fade">   <!--mySlides와 fade라는 class를 2개 적용한 것-->
-            <img src="image01.jpg" alt="" style="width:100%; height:410px;" />
-            <div class="text">Little by little does the trick</div>
-        </div>
-                
-        <div class="mySlides fade">
-            <img src="image02.jpg" alt="" style="width:100%; height:410px;" />
-            <div class="text">You will never know until you try</div>
-        </div>
-                
-        <div class="mySlides fade">
-            <img src="image03.jpg" alt="" style="width:100%; height:410px;" />
-            <div class="text">Whatever you do, make it pay</div>
-        </div>
-                
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>   <!-- &#10094 는 '<' 부호를 뜻함 -->
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>    <!-- &#10095 는 '>' 부호를 뜻함 -->
-    </div>
-        <br>
-        <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span> 
-            <span class="dot" onclick="currentSlide(2)"></span> 
-            <span class="dot" onclick="currentSlide(3)"></span> 
-        </div>
+          <br>
+      <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span> 
+          <span class="dot" onclick="currentSlide(2)"></span> 
+          <span class="dot" onclick="currentSlide(3)"></span> 
+      </div>
       
 
 
- <script>
-        var slideIndex = 1;
-        showSlides(slideIndex);
-
-        function plusSlides(n) {
-          showSlides(slideIndex += n);
-        }
-
-        function currentSlide(n) {
-          showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-          var i;
-          var slides = document.getElementsByClassName("mySlides");
-          var dots = document.getElementsByClassName("dot");
-          var prev = document.getElementsByClassName('prev');
-          var next = document.getElementsByClassName('next');
-
-          if (n > slides.length) {
-            slideIndex = 1
-          }    
-          if (n < 1) {
-            slideIndex = slides.length
-          }
-          for (i = 0; i < slides.length; i++) {
-              slides[i].style.display = "none";  
-          }
-          for (i = 0; i < dots.length; i++) {
-              dots[i].className = dots[i].className.replace(" active", "");
-          }
-          slides[slideIndex-1].style.display = "block";  
-          dots[slideIndex-1].className += " active";
-          setTimeout(showSlides, 2000);
-}
- </script>
 
 
-
-  <!--Section(3)img_sliding-->  
-  <!--
-    <ul class="slides">
-        
-        <input type="radio" name="radio-btn" id="img-1" checked />
-        <li class="slide-container">
-            <div class="slide">
-              <img src="img1.jpg" alt="cat"/>
-            </div>
-    
-            <div class="navi">
-              <label for="img-4" class="prev">&#x2039;</label>
-              <label for="img-2" class="next">&#x203a;</label>
-            </div>
-        </li>
-    
-        <input type="radio" name="radio-btn" id="img-2" />
-        <li class="slide-container">
-            <div class="slide">
-              <img src="img2.jpg" alt="first woomen" />
-            </div>
-    
-            <div class="navi">
-              <label for="img-1" class="prev">&#x2039;</label>
-              <label for="img-3" class="next">&#x203a;</label>
-            </div>
-        </li>
-    
-        <input type="radio" name="radio-btn" id="img-3" />
-        <li class="slide-container">
-            <div class="slide">
-              <img src="img3.jpg" alt="second women"/>
-            </div>
-    
-            <div class="navi">
-              <label for="img-2" class="prev">&#x2039;</label>
-              <label for="img-4" class="next">&#x203a;</label>
-            </div>
-        </li>
-    
-        <input type="radio" name="radio-btn" id="img-4" />
-        <li class="slide-container">
-            <div class="slide">
-              <img src="img4.jpg" />
-            </div>
-    
-            <div class="navi">
-              <label for="img-3" class="prev">&#x2039;</label>
-              <label for="img-1" class="next">&#x203a;</label>
-            </div>
-        </li>
-    
-
-    
-        <li class="nav-dots">
-          <label for="img-1" class="nav-dot" id="img-dot-1"></label>
-          <label for="img-2" class="nav-dot" id="img-dot-2"></label>
-          <label for="img-3" class="nav-dot" id="img-dot-3"></label>
-          <label for="img-4" class="nav-dot" id="img-dot-4"></label>
-        </li>
-    </ul>
-  --> 
+      <!--(3)img_sliding--> 
+        <!--
+          <ul class="slides">
+              
+              <input type="radio" name="radio-btn" id="img-1" checked />
+              <li class="slide-container">
+                  <div class="slide">
+                    <img src="img1.jpg" alt="cat"/>
+                  </div>
+          
+                  <div class="navi">
+                    <label for="img-4" class="prev">&#x2039;</label>
+                    <label for="img-2" class="next">&#x203a;</label>
+                  </div>
+              </li>
+          
+              <input type="radio" name="radio-btn" id="img-2" />
+              <li class="slide-container">
+                  <div class="slide">
+                    <img src="img2.jpg" alt="first woomen" />
+                  </div>
+          
+                  <div class="navi">
+                    <label for="img-1" class="prev">&#x2039;</label>
+                    <label for="img-3" class="next">&#x203a;</label>
+                  </div>
+              </li>
+          
+              <input type="radio" name="radio-btn" id="img-3" />
+              <li class="slide-container">
+                  <div class="slide">
+                    <img src="img3.jpg" alt="second women"/>
+                  </div>
+          
+                  <div class="navi">
+                    <label for="img-2" class="prev">&#x2039;</label>
+                    <label for="img-4" class="next">&#x203a;</label>
+                  </div>
+              </li>
+          
+              <input type="radio" name="radio-btn" id="img-4" />
+              <li class="slide-container">
+                  <div class="slide">
+                    <img src="img4.jpg" />
+                  </div>
+          
+                  <div class="navi">
+                    <label for="img-3" class="prev">&#x2039;</label>
+                    <label for="img-1" class="next">&#x203a;</label>
+                  </div>
+              </li>
+          
+              <li class="nav-dots">
+                <label for="img-1" class="nav-dot" id="img-dot-1"></label>
+                <label for="img-2" class="nav-dot" id="img-dot-2"></label>
+                <label for="img-3" class="nav-dot" id="img-dot-3"></label>
+                <label for="img-4" class="nav-dot" id="img-dot-4"></label>
+              </li>
+          </ul>
+        --> 
    
   </section>
 
@@ -229,39 +162,13 @@
     <!-- Footer-->
     <footer>
         <div>Contact<i class="fas fa-envelope-square"></i></div>
-        <!--
-    <input type="button" value="night" onclick="
-    var target=document.querySelector('body')
-      if(this.value==='night') {
-        target.style.backgroundColor='black';
-        target.style.color='white';
-        this.value='day';
-            var alist=document.querySelectorAll('a');
-            var i=0;
-            while(i < alist.length){
-              alist[i].style.color='powderblue';
-              i=i+1;
-            }
-      } else {
-        target.style.backgroundColor='white';
-        target.style.color='black';
-        this.value='night';
-            var alist=document.querySelectorAll('a');
-            var i=0;
-            while(i < alist.length){
-              alist[i].style.color='blue';
-              i=i+1;
-            }
-      }
-    ">
-  -->
-
         <input type="button" value="night" onclick="
-          var target=document.querySelector('body')
-          handler(this);
-        ">
+        var target=document.querySelector('body')
+        handler(this);
+      ">
+
 
     </footer>
-   
+    
 </body>
 </html>
