@@ -4,20 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kirin Web</title>
-    <meta name = "describtion" content = "javascript">
-    <meta name = "keyword" content = "javascript, css, html, work">
+    <meta name = "describtion" content = "flex">
     <meta name = "author" content = "kirin">
     
-    <!-- 
-    <link rel="icon" type = "image/png" href = "images/favicon.png"> 
-    -->
+    <!-- Favicon-->
+    <link rel="icon" type = "image/png" href = "favicon-16.png"> 
     
     <!-- Font Awesome icons (free version)-->
     <script src="https://kit.fontawesome.com/d521151761.js" crossorigin="anonymous"></script>
  
-    <!-- Google fonts (웹사이트에서 'link 코드' html에 넣고 css의 body에 따로 적용) -->
+    <!-- Google fonts  -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
     
     <link rel = "stylesheet" href = "index.css"/>
     <script defer src="index.js" ></script> 
@@ -84,7 +82,7 @@
       </div>
 
           <br>
-      <div style="text-align:center">
+      <div style="text-align:center; background-color:var(--text-color);");>
           <span class="dot" onclick="currentSlide(1)"></span> 
           <span class="dot" onclick="currentSlide(2)"></span> 
           <span class="dot" onclick="currentSlide(3)"></span> 
@@ -159,16 +157,14 @@
 
 
 
-    <!-- Footer-->
+<!-- Footer-->
     <footer>
-        <div>Contact<i class="fas fa-envelope-square"></i></div>
-        <input type="button" value="night" onclick="
-        var target=document.querySelector('body')
-        handler(this);
-      ">
+      <div>Contact<a href="mailto:boma91@naver.com"><i class="fas fa-envelope-square"></i></a></div>
+      
+      <input type="button" value="night" onclick="
+      handler(this);
+    ">
+  </footer>
 
-
-    </footer>
-    
 </body>
 </html>

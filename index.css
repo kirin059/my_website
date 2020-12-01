@@ -21,10 +21,6 @@
     --weight-semi-bold: 600;
     --weight-nomal: 400;
 }
-    /* Size
-    --size-border-radius: 25px;
-  }
-  */
   
 
   
@@ -51,30 +47,17 @@
 
 
 
-/*
-ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-button {
-    background-color: transparent;
-    cursor: pointer;
-    border: none;
-    outline: none;
-}
-*/
-
 * {
     box-sizing: border-box;
     margin:0;
+    font-family: 'Do Hyeon', sans-serif;
 }
 html {
     scroll-behavior: smooth;
   }
 
  /* Grid */
-   body{
+body{
     display: grid;
     grid-template-rows: 100px 3fr 1fr;
     font-family: 'Source Sans Pro';  /* html에 적용하고자 하는 폰트의 link 적용 후, 해당 font-family 내용 body에 적용하기 */
@@ -95,6 +78,10 @@ html {
 a {
     text-decoration: none;
     color: var(--text-color);
+    cursor: pointer;
+}
+a:visited{
+    color:var(--text-color);
 }
 
 .navbar_logo {
@@ -106,11 +93,6 @@ a {
     color:var(--icon-color);
     opacity: 0.9;
 }
-
-/* .navbar_logo:hover{
-    background-color: var(--point-color);
-    border-radius: 10px;
-} */
 
 .navbar_menu {
     display: flex;
@@ -157,11 +139,15 @@ a {
 
 
 @media screen and (max-width: 768px) {
+    body{
+        display: grid;
+        grid-template-rows: 60px 450px 1fr;
+    }
     .navbar{
         flex-direction: column;
         align-items: flex-start;
         width:100%;
-        height: auto;
+        height:60px;
         padding: 8px 24px;
         z-index: 1;
     }
@@ -194,131 +180,152 @@ a {
 }
 
 
+
+
+
 /* Section  */
 section{
     grid-row-start:2;
     grid-row-end: 3;
     margin:0;
     padding:0;
+    background-color: var(--text-color);
 }
 
-/* (1)clock */
-.clock-location{
-    width:100%;
-    height:150px;
-    margin: auto;
-    background-color:var(--point-color);
-    text-align: center;
-    vertical-align: center;
-    font-size: 100px;
-    font-weight: var( --weight-bold);
-}
-h1 {
-    font-size: var(--font-large);
-    font-weight: var(--weight-bold);
-    color:var(--point-color);
-    text-align: center;
-  }
-
-
-/* (2)img_sliding */
-.mySlides {
-    width:100%;
-    height:400px;
-}
-img {
-    vertical-align: middle;
-}
-
-/* Slideshow container */
-.slideshow-container {
-    max-width: 100%;       /* 또는 1000px로 지정 가능 */
-    position: relative;
-    margin: auto;
-}
-    
-/* Next & previous buttons */
-.prev, .next {
-    cursor: pointer;
-    position: absolute;   /* 부모태그(.slideshow-container)에 position:relative를 적용하였기에 absolute로 위치 지정 가능(기본 왼쪽 정렬) */
-    top: 45%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 50px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
+    /* (1)clock */
+    .clock-location{
+        width:100%;
+        height:160px;
+        margin: auto;
+        background-color:var( --text-color);
+        text-align: center;
+        vertical-align: center;
+        font-size: 100px;
+        font-weight: var( --weight-bold);
     }
-    
-    /* Position the "next button" to the right */
-    .next {
-      right: 0;           /* absulute는 기본 왼쪽정렬이기 때문에 righ:0; 값을 지정하여 오른쪽으로 위치를 조절한다 */
-      border-radius: 3px 0 0 3px;
-    }
-    
-    /* On hover, add a black background color with a little bit see-through */
-    .prev:hover, .next:hover {
-      background-color: rgba(0,0,0,0.8);
-    }
-    
-    /* Caption text */
-    .text {
-      color: #f2f2f2;
-      font-size: 35px;
-      padding: 8px 12px;
-      position: absolute;
-      bottom: 10px;
-      width: 100%;
-      text-align: center;
-    }
-    
-    /* The dots/bullets/indicators */
-    .dot {
-      cursor: pointer;
-      height: 15px;
-      width: 15px;
-      margin: 0 2px;
-      background-color: #bbb;
-      border-radius: 50%;
-      display: inline-block;
-      transition: #725275 0.6s ease;
-    }
-    
-    .active, .dot:hover {
-      background-color: #725275;
-    }
-    
-    /* Fading animation */
-    .fade {
-      animation-name: fade;
-      animation-duration: 1.5s;
-    }
-    /*
-      -webkit-animation-name: fade;
-      -webkit-animation-duration: 1.5s;
-    */
-    
-    @keyframes fade {
-      from {opacity: .4} 
-      to {opacity: 1}
-    }
-    /*
-    @-webkit-keyframes fade {
-      from {opacity: .4} 
-      to {opacity: 1}
-    }
-    */
-    
-    /* On smaller screens, decrease text size */
-    @media only screen and (max-width: 300px) {
-      .prev, .next,.text {font-size: 11px}
+    h1 {
+        font-size: var(--font-large);
+        font-weight: var(--weight-bold);
+        color:var(--point-color);
+        text-align: center;
     }
 
 
+    /* (2)img_sliding */
+    .mySlides {
+        width:100%;
+        height:400px;
+    }
+    img {
+        vertical-align: middle;
+    }
 
-/* Section(3)img_sliding
+    /* Slideshow container */
+    .slideshow-container {
+        max-width: 100%;       /* 또는 1000px로 지정 가능 */
+        position: relative;
+        margin: auto;
+        background-color:var(--text-color);
+    }
+        
+    /* Next & previous buttons */
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;   /* 부모태그(.slideshow-container)에 position:relative를 적용하였기에 absolute로 위치 지정 가능(기본 왼쪽 정렬) */
+        top: 45%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 50px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        }
+        
+        /* Position the "next button" to the right */
+        .next {
+        right: 0;           /* absulute는 기본 왼쪽정렬이기 때문에 righ:0; 값을 지정하여 오른쪽으로 위치를 조절한다 */
+        border-radius: 3px 0 0 3px;
+        }
+        
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+        }
+        
+        /* Caption text */
+        .text {
+        color: #f2f2f2;
+        font-size: 35px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+        text-align: center;
+        }
+        
+        /* The dots/bullets/indicators */
+        .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: #725275 0.6s ease;
+        }
+        
+        .dot:active, .dot:hover {
+        background-color: purple;
+
+        }
+        
+        /* Fading animation */
+        .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+        }
+        /*
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        */
+        
+        @keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+        }
+        /*
+        @-webkit-keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+        }
+        */
+    
+    
+    @media only screen and (max-width:  768px) {
+      .prev, .next,.text {
+          font-size: 30px
+        }
+      .clock-location{
+        display:none;
+        }
+      h1 {
+        display:none;
+        }
+      .slideshow-container {
+        height:400px;
+      }
+      img{
+        height:300px;
+      }
+    }
+
+
+
+/* Section(
+height:300px;3)img_sliding
 
 @import url(https://fonts.googleapis.com/css?family=Varela+Round);
 
@@ -439,11 +446,12 @@ background: rgba(0, 0, 0, 0.8);
   /* Footer */
 footer{
     grid-row-start:3;
-    grid-row-end: 4s;
+    grid-row-end: 4;
     font-size: 25px;
     font-weight: var( --weight-bold);
-    padding:8px 24px;
+    padding:20px 24px;
     text-align: center;
+    background-color:var(--text-color);
 }
 footer i{
     color:var(--icon-color);
