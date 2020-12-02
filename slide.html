@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kirin Web</title>
+    <meta name = "describtion" content = "website">
+    <meta name = "author" content = "kirin">
+    
+    <!-- Favicon-->
+    <link rel="icon" type = "image/ico" href = "favicon.ico"> 
+    
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://kit.fontawesome.com/d521151761.js" crossorigin="anonymous"></script>
+ 
+    <!-- Google fonts  -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    
+    <link rel = "stylesheet" href = "index.css"/>
+    <script defer src="index.js" ></script> 
+</head>
+
+<body>
+
+<!-- Navigation-->
+  <nav class="navbar">
+      <div class="navbar_logo">
+        <i class="fas fa-cubes"></i>
+         <span>kirin</span>
+      </div>
+       
+      <ul class="navbar_menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="game.html">MathGame</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="guest.html">Guest</a></li>
+     </ul>
+
+      <ul class="navbar_icon">
+         <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram-square"></a></i></li>
+         <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></a></i></li>
+      </ul>
+
+      <a href="#" class="navbar_toggleBtn">
+         <i class="fas fa-bars"></i>
+      </a>
+  </nav>
+
+
+
+ <!-- Section-->
+  <section>
+
+    <div class="slideshow-container">
+        <div class="mySlides fade">   <!--mySlides와 fade라는 class를 2개 적용-->
+            <img src="image01.jpg" alt="" style="width:100%; height:410px;" />
+            <div class="text">Little by little does the trick</div>
+        </div>
+                  
+        <div class="mySlides fade">
+            <img src="image02.jpg" alt="" style="width:100%; height:410px;" />
+            <div class="text">You will never know until you try</div>
+        </div>
+                
+        <div class="mySlides fade">
+            <img src="image03.jpg" alt="" style="width:100%; height:410px;" />
+            <div class="text">Whatever you do, make it pay</div>
+         </div>
+                  
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>   <!-- &#10094 는 '<' 부호를 뜻함 -->
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>    <!-- &#10095 는 '>' 부호를 뜻함 -->
+
+    </div>
+
+        <br>
+    <div style="text-align:center; background-color:var(--text-color);");>
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
+      
+
+      <!--(3)img_sliding--> 
+        <!--
+          <ul class="slides">
+              
+              <input type="radio" name="radio-btn" id="img-1" checked />
+              <li class="slide-container">
+                  <div class="slide">
+                    <img src="img1.jpg" alt="cat"/>
+                  </div>
+          
+                  <div class="navi">
+                    <label for="img-4" class="prev">&#x2039;</label>
+                    <label for="img-2" class="next">&#x203a;</label>
+                  </div>
+              </li>
+          
+              <input type="radio" name="radio-btn" id="img-2" />
+              <li class="slide-container">
+                  <div class="slide">
+                    <img src="img2.jpg" alt="first woomen" />
+                  </div>
+          
+                  <div class="navi">
+                    <label for="img-1" class="prev">&#x2039;</label>
+                    <label for="img-3" class="next">&#x203a;</label>
+                  </div>
+              </li>
+          
+              <input type="radio" name="radio-btn" id="img-3" />
+              <li class="slide-container">
+                  <div class="slide">
+                    <img src="img3.jpg" alt="second women"/>
+                  </div>
+          
+                  <div class="navi">
+                    <label for="img-2" class="prev">&#x2039;</label>
+                    <label for="img-4" class="next">&#x203a;</label>
+                  </div>
+              </li>
+          
+              <input type="radio" name="radio-btn" id="img-4" />
+              <li class="slide-container">
+                  <div class="slide">
+                    <img src="img4.jpg" />
+                  </div>
+          
+                  <div class="navi">
+                    <label for="img-3" class="prev">&#x2039;</label>
+                    <label for="img-1" class="next">&#x203a;</label>
+                  </div>
+              </li>
+          
+              <li class="nav-dots">
+                <label for="img-1" class="nav-dot" id="img-dot-1"></label>
+                <label for="img-2" class="nav-dot" id="img-dot-2"></label>
+                <label for="img-3" class="nav-dot" id="img-dot-3"></label>
+                <label for="img-4" class="nav-dot" id="img-dot-4"></label>
+              </li>
+          </ul>
+        --> 
+   
+  </section>
+  <div class="btn_bg">
+    <input class="slide_btn" type="button" value="Back to the previous Page" onClick="location.href='index.html';"> 
+  </div>
+</body>
+</html>

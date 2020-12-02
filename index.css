@@ -23,34 +23,14 @@
 }
   
 
-  
-  h2 {
-    font-size: var(--font-medium);
-    font-weight: var(--weight-semi-bold);
-    color: var(--black);
-    margin: 8px 0;
-  }
-  
-  h3 {
-    font-size: var(--font-regular);
-    font-weight: var(--weight-regular);
-    color: var(--black);
-    margin: 8px 0;
-  }
-  
-  p {
-    font-size: var(--font-regular);
-    font-weight: var(--weight-regular);
-    color: var(--black);
-    margin: 4px 0;
-  }
-
-
 
 * {
     box-sizing: border-box;
     margin:0;
     font-family: 'Do Hyeon', sans-serif;
+}
+a{
+    cursor: pointer;
 }
 html {
     scroll-behavior: smooth;
@@ -97,13 +77,14 @@ a:visited{
 .navbar_menu {
     display: flex;
     list-style: none;
+    vertical-align: middle;
     padding-left:0;  /* 기본적으로 padding-left값이 적용되어 있기 때문에 0으로 바꿔주면 중앙배치 완료 */
-    font-size: 20px;
+    font-size: 23px;
     color:var(--text-color);
     font-weight: var(--weight-nomal);
 }
 .navbar_menu li {
-    padding: 8px 23px;  /* padding(0px 0px) = 위+아래, 좌+우 와 같다. 즉 위+아래 8px, 좌+우 12px로 적용한 것 */
+    padding: 7px 25px;  /* padding(0px 0px) = 위+아래, 좌+우 와 같다. 즉 위+아래 8px, 좌+우 12px로 적용한 것 */
     margin: 0px 6px;
     cursor: pointer;
     border-radius: 10px;
@@ -193,23 +174,55 @@ section{
 }
 
     /* (1)clock */
+    .clock{
+        text-align: center;
+        vertical-align: middle;
+        padding-top: 150px;
+    }
     .clock-location{
         width:100%;
-        height:160px;
+        height:350px;
         margin: auto;
+        padding-top: 40px;
+        padding-bottom: 10px;
         background-color:var( --text-color);
         text-align: center;
-        vertical-align: center;
+        vertical-align: middle;
         font-size: 100px;
         font-weight: var( --weight-bold);
     }
     h1 {
-        font-size: var(--font-large);
-        font-weight: var(--weight-bold);
-        color:var(--point-color);
+        font-size: 40px;
+        color:var(--black);
+    }
+    .slide_btn{
+        border: none;
+        border-radius: 25%;
+        padding:10px;
+        margin-bottom: 80px;
+        display: inline;
         text-align: center;
+        background-color:darkcyan;
+        color:var(--text-color);
+        font-weight: var( --weight-nomal);
+        font-size: 20px;
+        box-shadow: 5px 5px 5px 5px gray;
+    }
+    .btn_bg{
+        text-align: center;
+        vertical-align: middle;
+        width:100%;
+        height:350px;
+        margin: 0;
+        padding-top: 45px;
+        padding-bottom: 10px;
+        background-color:var( --text-color);
     }
 
+
+    .slide_btn:focus {
+        outline: none;
+      }
 
     /* (2)img_sliding */
     .mySlides {
@@ -448,8 +461,8 @@ footer{
     grid-row-start:3;
     grid-row-end: 4;
     font-size: 25px;
-    font-weight: var( --weight-bold);
     padding:20px 24px;
+    font-weight: var( --weight-bold);
     text-align: center;
     background-color:var(--text-color);
 }
@@ -474,9 +487,9 @@ footer i{
 
 
 
+/*
 
-
-/* Home  */
+-- Home  --
 #home {
     padding: 80px 0px 0px 0px;
     margin: auto;
@@ -530,16 +543,16 @@ footer i{
 
 .blog__address {
     text-align: left;
-    /* font-weight: var(--weight-semi-bold); */
+    /* font-weight: var(--weight-semi-bold); 
 }
 
 .email__address {
     text-align: left;
-    /* font-weight: var(--weight-semi-bold); */
+    /* font-weight: var(--weight-semi-bold); 
 }
 
 
-/* button  */
+-- button  --
 
 .home__contact {
     margin: 50px 0px 0px 0px;
@@ -563,7 +576,7 @@ footer i{
     border-color: var(--color-dark-pink);
 }
 
-/* Section common */
+-- Section common --
 .section {
     padding: 50px;
     text-align: center;
@@ -578,7 +591,7 @@ footer i{
 }
 
 
-/* About  */
+-- About --
 #about {
     max-width: 50rem;
     padding: 2.4375rem 1.21875rem;
@@ -620,7 +633,7 @@ footer i{
     text-align: left;
     padding: 50px 100px 0px 100px;
     font-family: "나눔고딕";
-    /* border: 2px solid var(--color-navy); */
+    /* border: 2px solid var(--color-navy); 
 }
 
 .about__description ul {
@@ -632,11 +645,11 @@ footer i{
     padding: 5px 0px;
 }
 
-/* Skills  */
+-- Skills  --
 #skills {
     
    background-color: var(--color-pink);
-    /* background: linear-gradient(45deg, #0F2027,#203A43, #2C5364); */
+    /* background: linear-gradient(45deg, #0F2027,#203A43, #2C5364); 
     
 }
 
@@ -737,3 +750,4 @@ footer i{
     height: 100%;
    
 }
+*/

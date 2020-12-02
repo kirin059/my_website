@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kirin Web</title>
+    <meta name = "describtion" content = "flex">
+    <meta name = "author" content = "kirin">
+    
+    <!-- Favicon-->
+    <link rel="icon" type = "image/ico" href = "favicon.ico"> 
+    
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://kit.fontawesome.com/d521151761.js" crossorigin="anonymous"></script>
+ 
+    <!-- Google fonts  -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    
+    <link rel = "stylesheet" href = "index.css"/>
+    <link rel = "stylesheet" href = "guest.css"/>
+
+    <script defer src="guest.js" ></script> 
+
+</head>
+<body>
+
+  <!-- Navigation-->
+    <nav class="navbar">
+        <div class="navbar_logo">
+            <i class="fas fa-cubes"></i>
+            <span>kirin</span>
+        </div>
+       
+        <ul class="navbar_menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="game.html">Game</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="guest.html">Guest</a></li>
+        </ul>
+
+        <ul class="navbar_icon">
+            <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram-square"></a></i></li>
+            <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></a></i></li>
+        </ul>
+
+        <a href="#" class="navbar_toggleBtn">
+            <i class="fas fa-bars"></i>
+        </a>
+    </nav>
+
+
+
+<!-- Section-->
+<section>
+    <form action="" name="form1" target="_blank">
+        <select name="links" onchange="goLink()">
+            <option selected disabled hidden>Move to page</option>
+            <optgroup label="portal">
+                <option value="https://www.google.co.kr">google</option>
+                <option value="https://www.naver.com">Naver</option>
+                <option value="https://www.daum.net">Daum</option>
+            </optgroup>
+            
+            <optgroup label="SNS">
+                <option value="https://www.facebook.com">Facebook</option>
+                <option value="https://www.instagram.com">Instagram</option>
+                <option value="https://www.twitter.com">Twitter</option>
+            </optgroup>
+        </select>
+    </form> 
+        
+    <header>
+        <h1>Guest Survey</h1>
+    </header>
+
+    <main>
+        <div id="welcome">
+            <article>
+                <div class="photo"></div>
+                <div class="welcome_txt">
+                    <p>방문해주셔서 감사합니다. <br>
+                    Guest가 남겨주신 의견은 더 좋은 웹사이트를 위해 반영하겠습니다.</p>
+                </div>
+            </article>
+        </div>
+
+        <form id="survey">
+            <fieldset>
+                <legend id="title">아래 설문에 응답해주세요</legend>
+                    이름: <input type="text" /> <br><br>
+                    성별: 
+                    <label>여성
+                        <input type="radio" name="sex" value="female"/>
+                    </label>
+                    <label>남성
+                        <input type="radio" name="sex" value="male"/>
+                    </label>
+                    <br><br>
+                <fieldset>
+                    <legend>만족도 조사</legend>
+                        <br>
+                        1. 웹페이지의 디자인 <br>
+                        매우만족<input type="checkbox" name="design" />
+                        만족<input type="checkbox" name="design" />
+                        조금만족<input type="checkbox" name="design" />
+                        불만족<input type="checkbox" name="design" /> 
+                        <br><br>
+                        2. 웹페이지의 내용 구성 <br>
+                        매우만족<input type="checkbox" name="design" />
+                        만족<input type="checkbox" name="design" />
+                        조금만족<input type="checkbox" name="design" />
+                        불만족<input type="checkbox" name="design" /> 
+                        <br><br>
+                        3. Math Game <br>
+                        매우 재미있다<input type="checkbox" name="design" />
+                        흥미롭다<input type="checkbox" name="design" />
+                        재미없다<input type="checkbox" name="design" />
+                        <br><br>
+                        4. Quiz <br>
+                        매우 재미있다<input type="checkbox" name="design" />
+                        흥미롭다<input type="checkbox" name="design" />
+                        재미없다<input type="checkbox" name="design" />
+                        <br><br>
+                    
+                </fieldset>
+                <br><br>
+                <label for="opinion">Guest Opinion</label><br>
+                <textarea id="opinion" name="write" row="50" cols="100"> Kirin 웹사이트에 방문하여...                   
+                </textarea>   
+            </fieldset>
+        </form>
+
+        
+    </main>
+</section>
+
+
+
+    <!-- Footer-->
+    <footer>
+        <div>Contact<a href="mailto:boma91@naver.com"><i class="fas fa-envelope-square"></i></a></div>
+        
+        <input type="button" value="night" onclick="
+        handler(this);
+      ">
+
+    </footer>
+   
+   
+</body>
+</html>
+
+
+
+
+
+<!--
+    <div id="works">
+            <h2>MY WORKS</h2>
+            <ul class="grid cs-style-3">
+				<li>
+					<figure>
+						<img src="img/works_thum01.png" alt="img03">
+						<figcaption>
+							<h3>my works</h3>
+							<span>2020.03 ~ 2020. 04</span>
+							<a href="#none">Take a look</a>
+						</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<img src="img/works_thum02.png" alt="img01">
+						<figcaption>
+							<h3>my works</h3>
+							<span>2020.03 ~ 2020. 04</span>
+							<a href="#none">Take a look</a>
+						</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<img src="img/works_thum03.png" alt="img02">
+						<figcaption>
+							<h3>my works</h3>
+							<span>2020.03 ~ 2020. 04</span>
+							<a href="#none">Take a look</a>
+						</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<img src="img/works_thum04.png" alt="img04">
+						<figcaption>
+							<h3>my works</h3>
+							<span>2020.03 ~ 2020. 04</span>
+							<a href="#none">Take a look</a>
+						</figcaption>
+					</figure>
+				</li>
+			</ul>
+        </div>
+        <div id="contact">
+            <h2>more about</h2>
+            <p class="lines"></p>
+            <ul>
+                <li><a href="https://github.com/delheure" target="_blank">github</a></li>
+                <li><a href="mailto:delheure29@gmail.com" target="_blank">gmail</a></li>
+                <li><a href="https://velog.io/@delheure" target="_blank">velog</a></li>
+            </ul>
+        </div>
+-->

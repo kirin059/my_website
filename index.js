@@ -51,9 +51,9 @@ hour가 10보다 작으면(if) `0을 hour앞에 붙여주고` 그렇지않으면
 
 
 
-/* Section(2)_img sliding */
+/* Section_img sliding */
 var slideIndex = 1;
-        showSlides(slideIndex);
+        // showSlides(slideIndex);
 
         function plusSlides(n) {
           showSlides(slideIndex += n);
@@ -85,7 +85,7 @@ var slideIndex = 1;
           slides[slideIndex-1].style.display = "block";  
           dots[slideIndex-1].className += " active";
           setTimeout(showSlides, 2000);
-}
+        }
 
 
 //footer_dark mode
@@ -102,10 +102,10 @@ var slideIndex = 1;
       setColor : function (color){
       var alist=document.querySelectorAll('a');
       var i = 0;
-      while(i < alist.length){
-        alist[i].style.color=color;
-        i=i+1;
-      }
+        while(i < alist.length){
+          alist[i].style.color=color;
+          i=i+1;
+        }
       }
     }
 
@@ -113,13 +113,13 @@ var slideIndex = 1;
       var target=document.querySelector('body')
       if(self.value==='night') {
         Body.setBackColor('black');
-        Body.setColor('white');
+        Body.setColor('#f0f4f5');
         self.value='day';
 
         Link.setColor('powderblue');
 
       } else {
-        Body.setBackColor('white');
+        Body.setBackColor('#f0f4f5');
         Body.setColor('black');
         self.value='night';
 
