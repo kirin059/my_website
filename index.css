@@ -140,7 +140,9 @@ a:visited{
         display: none;   /* toggleBtn을 눌렀을때 나오도록 만들기 위해, 기본적으로  display: none;을 적용해준다 */
         flex-direction: column;
         align-items: flex-start;
+        margin:0;
         width:100%;
+        background: linear-gradient(#0F2027, #2C5364,#0F2027);
     }
     .navbar_menu li{
         width:100%;
@@ -151,6 +153,7 @@ a:visited{
         justify-content: center;
         width:100%;
         padding-left:0;
+        background: linear-gradient(#0F2027, #2C5364,#0F2027);
     }
     .navbar_toggleBtn{
         display:block;
@@ -452,7 +455,6 @@ input#img-6:checked ~ .nav-dots label#img-dot-6 {
 background: rgba(0, 0, 0, 0.8);
 }
 */
-
 
 
 
