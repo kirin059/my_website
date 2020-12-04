@@ -36,7 +36,7 @@ html {
    body{
     display: grid;
     grid-template-rows: 100px 3fr 1fr;
-    font-family: 'Source Sans Pro';  /* html에 적용하고자 하는 폰트의 link 적용 후, 해당 font-family 내용 body에 적용하기 */
+    background-color:var(--text-color);
 }
 
 
@@ -48,26 +48,33 @@ section{
     margin:0;
     padding:0;
     background-color:var(--text-color);
-    height: 500px;
 }
 
+fieldset{
+    max-width: 50em;
+    border: 2px solid #eed0dc;
+    border-radius: 30px;
+    background: #fff;
+    box-shadow: 5px 5px 5px #cbcbcb;
+    margin: 60px auto;
+}
 table{
     border:0; 
     width:500px; 
-    height:300px; 
     margin:auto;
     font-weight: var( --weight-bold);
     font-size: 20px;
-    color:var(--point-color);
-    padding-top:30px;
+    color: #ff6f00;
+    padding: 30px 0;
 }
 caption{
     font-size:35px;
     text-align:center;
-    color:white;
     margin-top:30px;
     padding:5px;
-    background-color:  #054d65;
+    background-color:  #c43e00;
+    color:white;
+    width:600px;
     border-radius: 30px;
 }
 td {
@@ -76,10 +83,10 @@ td {
 }
 .answer input{
     width:100%; 
-    background-color: #054d65;
-    color:var(--text-color);
+    background-color: #ffa040;
+    color: #424242;
     font-weight: var(--weight-nomal);
-    border:none;
+    border:1px solid;
 }
 
 

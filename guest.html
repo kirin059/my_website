@@ -17,10 +17,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
     
-    <link rel = "stylesheet" href = "index.css"/>
     <link rel = "stylesheet" href = "guest.css"/>
 
-
+    <script defer src="index.js" ></script> 
 </head>
 <body>
 
@@ -28,7 +27,7 @@
     <nav class="navbar">
         <div class="navbar_logo">
             <i class="fas fa-cubes"></i>
-            <span>kirin</span>
+            <span>Funny</span>
         </div>
        
         <ul class="navbar_menu">
@@ -49,133 +48,113 @@
     </nav>
 
 
-
-<!-- Section-->
-<section>
-    <form action="" name="form1" target="_blank">
-        <select name="links" onchange="goLink()">
-            <option selected disabled hidden>Move to page</option>
-            <optgroup label="portal">
-                <option value="https://www.google.co.kr">google</option>
-                <option value="https://www.naver.com">Naver</option>
-                <option value="https://www.daum.net">Daum</option>
-            </optgroup>
             
-            <optgroup label="SNS">
-                <option value="https://www.facebook.com">Facebook</option>
-                <option value="https://www.instagram.com">Instagram</option>
-                <option value="https://www.twitter.com">Twitter</option>
-            </optgroup>
-        </select>
-    </form> 
+<!--survey form-->  
+<section>
+          
+    <div class="container">
+        <h1><span style="color:#e91e63">G</span>ue<span style="color:#1e88e5">s</span>t <span style="color:#ffea00">S</span>ur<span style="color:#c158dc">v</span>ey</h1>
+        <p id="description" class="description">Guest가 남겨주신 의견을 반영하여 더 좋은 웹사이트를 만들겠습니다.</p>
+    
+        <form id="survey-form" action="">
         
-    <header>
-        <h1>Guest Survey</h1>
-    </header>
-
-    <main>
-        <div id="welcome">
-            <article>
-                <div class="photo"></div>
-                <div class="welcome_txt">
-                    <p>방문해주셔서 감사합니다. <br>
-                    Guest가 남겨주신 의견은 더 좋은 웹사이트를 위해 반영하겠습니다.</p>
+            <fieldset class="fieldset">
+                <div class="fieldset-group">
+                    <label class="left" for="name">Name:</label>
+                    <input class="right" type="text" name="name" placeholder="Enter your name" required>  <!--required:불리언값. 양식이 전송되기 위해서 반드시 입력하거나 확인이 필요한 값-->
                 </div>
-            </article>
-        </div>
+                <div class="fieldset-group">
+                    <label class="left" for="email">Email:</label>
+                    <input class="right" type="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="fieldset-group">
+                    <label class="left" for="number">Age:</label>
+                    <input class="right" type="number" name="age" min="10" max="60" placeholder="Age">
+                </div>
+            </fieldset>
+        
+            <fieldset class="fieldset">
+                <div class="fieldset-group">
+                    <label class="left dropdown" for="dropdown">웹사이트에 대한 만족도는?</label>
+                    <select class="right" name="dropdown">
+                        <option selected disabled >Select an option</option>   <!--표면에 보이나 선택하지 않는 란(selected disabled 적용)-->
+                        <option> 만족해요! 또 방문하고 싶어요😍 </option>
+                        <option> 무난하게 즐길 수 있었어요 </option>
+                        <option> 재미있는 경험은 아니었어요 </option>
+                        <option> 다시는 방문하고 싶지 않아요😓 </option>
+                    </select>
+                </div>
+            </fieldset>
+        
+            <fieldset class="fieldset">
+                <div class="fieldset-group">
+                    <label class="left"><span style="color:#e91e63">Math Game</span>에 대한 guest의 만족도는? </label>
+                    <div class="right">
+                        <ul class="list">
+                            <li><label><input type="radio" name ="recomedation1" Value="1"> 아주 재미있다</label></li>
+                            <li><label><input type="radio" name="recomedation1" Value="2"> 그저 그렇다</label></li>
+                            <li><label><input type="radio" name="recomedation1" Value="3"> 재미없다</label></li>
+                        </ul>
+                    </div>
+                </div>
+            </fieldset>
 
-        <form id="survey" action="guest.html" method="GET">
-            <fieldset>
-                <legend id="title">아래 설문에 응답해주세요</legend>
-                    이름: <input type="name" id="name" /> <br><br>
-                    성별: 
-                    <label>여성
-                        <input type="radio" name="sex" value="female"/>
-                    </label>
-                    <label>남성
-                        <input type="radio" name="sex" value="male"/>
-                    </label>
-                    <br><br>
-                <fieldset>
-                    <legend>만족도 조사</legend>
-                        <br>
-                        1. 웹페이지의 디자인 <br>
-                        매우만족<input type="checkbox" name="design" />
-                        만족<input type="checkbox" name="design" />
-                        조금만족<input type="checkbox" name="design" />
-                        불만족<input type="checkbox" name="design" /> 
-                        <br><br>
-                        2. 웹페이지의 내용 구성 <br>
-                        매우만족<input type="checkbox" name="construct" />
-                        만족<input type="checkbox" name="construct" />
-                        조금만족<input type="checkbox" name="construct" />
-                        불만족<input type="checkbox" name="construct" /> 
-                        <br><br>
-                        3. Math Game <br>
-                        매우 재미있다<input type="checkbox" name="game" />
-                        흥미롭다<input type="checkbox" name="game" />
-                        재미없다<input type="checkbox" name="game" />
-                        <br><br>
-                        4. Quiz <br>
-                        매우 재미있다<input type="checkbox" name="quiz" />
-                        흥미롭다<input type="checkbox" name="quiz" />
-                        재미없다<input type="checkbox" name="quiz" />
-                        <br><br>
-                </fieldset>
+            <fieldset class="fieldset">
+                <div class="fieldset-group">
+                    <label class="left"><span style="color:#e91e63">Quiz</span>에 대한 guest의 만족도는? </label>
+                    <div class="right">
+                        <ul class="list">
+                            <li><label><input type="radio" name ="recomedation2" Value="1"> 아주 재미있다</label></li>
+                            <li><label><input type="radio" name="recomedation2" Value="2"> 그저 그렇다</label></li>
+                            <li><label><input type="radio" name="recomedation2" Value="3"> 재미없다</label></li>
+                        </ul>
+                    </div>
+                </div>
+            </fieldset>
+        
+            <fieldset class="fieldset">
+                <div class="fieldset-group">
+                    <label class="left">웹사이트에서 보완 혹은 개선되어야 할 부분을 선택해주세요 <span style="color:#616161">(복수선택 가능)</span>:</label>
+                    <ul class="list right">
+                        <li><label for="a"><input name="a" value="1" type="checkbox"> (UI)웹사이트의 디자인/구성(frame)</label></li>
+                        <li><label for="b"><input name="b" value="2" type="checkbox"> (UI)웹사이트의 컬러(tone) </label></li>
+                        <li><label for="c"><input name="c" value="3"  type="checkbox"> (UI)웹사이트의 서체(font)</label></li>
+                        <li><label for="d"><input name="d" value="4" type="checkbox"> (UX)웹사이트의 구조(mapping)</label></li>
+                        <li><label for="e"><input name="e" value="5" type="checkbox"> (UX)웹사이트의 사용성</label></li>
+                        <li><label for="f"><input name="f" value="6" type="checkbox"> (UX)게임의 종류</label></li>
+                        <li><label for="g"><input name="g" value="7" type="checkbox"> (UX)게임의 난이도</label>
+                    </ul>
+                </div>
+            </fieldset>
 
-                <br><br>
-                <label for="opinion">Guest Opinion</label><br>
-                <textarea id="opinion" name="write" row="50" cols="100"> Kirin 웹사이트에 방문하여...                   
-                </textarea>   
-                
-                <p style="padding-top:50px; padding-bottom:30px;">
-                <input type="submit" value="submit" />
-                </p>
+            <fieldset class="fieldset" style="padding-bottom:15px;">
+                <div class="fieldset-group">
+                    <label for="comments" class="left">Guest의 의견</label>
+                    <textarea class="right" name="comments" placeholder="Enter your comment here..." rows="6" cols="30"></textarea>
+                </div>
+                <label for="submit"><input class="button" type="Submit" value="submit" id="submit"></label>
             </fieldset>
         </form>
-
-        
-    </main>
+    </div>
 </section>
 
-<!-- Footer-->
-    <footer>
-        <div>Contact<a href="mailto:boma91@naver.com"><i class="fas fa-envelope-square"></i></a></div>
-        
-        <input type="button" value="night" onclick="
-        handler(this);
-      ">
 
-    </footer>
-  
 
-    <!--js를 외부파일로 연결시키면, 내부에 작성한 <script>가 실행되지 않는다. html에 쓰려면 연결을 지워줘야 한다-->
-    <script>
-    function goLink() {
-        var n = document.form1.links.selectedIndex;
-        //select 태그에서 선택된 값의 위치 또는 순서 index를 알려면 selectedIndex 속성을 사용한다. 이 속성은 선택된 태그의 index 넘버를 반환해준다
-    
-        if(n==1){          //if(n!=0) 과 if(n==1)의 차이는 뭘까???
-            location.href=document.form1.links.options[n].value;
-        }
-    }
-   
-    
-        var s = document.getElementById('survey');
-            s.addEventListener('submit', function(event) {       //첫번째 인자(submit)의 이벤트가 발생하면, 두번째 인자인 익명함수가 실행된다.
-    
-            if(document.getElementById('name').value.length===0){
-                alert('Name을 입력해 주세요');
-                event.preventDefault;   //preventDefault 라는 메소드의 역할은 submit이 안된다(action프로퍼티로 전송되는 것을 방지한다.) 기본동작의 취소 기능으로 사용하는 메소드 
-            }
-        });
-    </script>
    
 </body>
 </html>
 
 
+<!-- Footer-->
+<footer>
 
+    <div>Contact<a href="mailto:boma91@naver.com"><i class="fas fa-envelope-square"></i></a></div>
+    
+    <input type="button" value="night" onclick="
+    handler(this);
+  ">
+
+</footer>
 
 
 <!--

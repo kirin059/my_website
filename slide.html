@@ -28,7 +28,7 @@
   <nav class="navbar">
       <div class="navbar_logo">
         <i class="fas fa-cubes"></i>
-         <span>kirin</span>
+        <span>Funny</span>
       </div>
        
       <ul class="navbar_menu">
@@ -76,48 +76,13 @@
     <br>
 
     <div style="text-align:center; background-color:var(--text-color);">
-      <span class="dot active" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(1)"></span> 
       <span class="dot" onclick="currentSlide(2)"></span> 
       <span class="dot" onclick="currentSlide(3)"></span> 
     </div>
 
 
-  <script>
-    var slideIndex = 1;             //현재 이미지는 1이다
-    showSlides(slideIndex);
-
-      function plusSlides(n) {       // -1 / 1 을 대입하는 자리
-        showSlides(slideIndex += n);  // -1을 넣으면 0이된다(1 += -1 = 0) slideIndex = 0
-      }                
-
-      function currentSlide(n) {
-        showSlides(slideIndex = n);   //1이다(=slideIndex)
-      }
-
-      function showSlides(n) {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("dot");
-        var prev = document.getElementsByClassName('prev');
-        var next = document.getElementsByClassName('next');
-
-        if (n > slides.length) {      //왜 n이 슬라이드 전체 갯수(3개)보다 큰가? 크면 4부터인데 4는 없다. 4번째는 없으니깐 4번째는 첫번째사진이되게
-          slideIndex = 1  //첫번쨰사진(반복되게 12312313)
-        }    
-        if (n < 1) {         //이전페이지 누른다는 뜻  (1=3이다) 첫번쨰에서 이전페이지 누르면 3번째 사진이 나온다
-          slideIndex = slides.length   //slideIndex가 슬라이드 전체 길이와 같다는게 무슨뜻일까
-        }
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";  //첫번째(0)를 제외한 나머지만  for문
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");  //replace()함수는 문자열을 바꿀때 사용  .replace("찾을 문자열". "바꿀문자열")
-        }                                                            //찾을 문자열을 active
-        slides[slideIndex-1].style.display = "block";  
-        dots[slideIndex-1].className += " active";
-        setTimeout(showSlides, 2000);
-      }
-  </script>
+           
       
   <!--이미지 박스-->
     <div class="img_box">
@@ -126,21 +91,6 @@
       <div class="square_img3"><img src="imgbox3.jpg" alt="" onload="showImage()"></div>
     </div>
 
-
-
-    <script> 
-      var imgArray=new Array(); 
-        imgArray[0]="imgbox1.jpg"; 
-        imgArray[1]="imgbox2.jpg"; 
-        imgArray[2]="imgbox3.jpg"; 
-      
-      function showImage(){ 
-        var imgNum=Math.round(Math.random()*3); 
-        var objImg=document.getElementsByClassName("square_img1", "square_img2", "square_img3"); 
-        objImg.src=imgArray[imgNum]; 
-        setTimeout(showImage,1000); 
-      } 
-    </script> 
    
   </section>
 
