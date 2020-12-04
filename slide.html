@@ -18,6 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
     
     <link rel = "stylesheet" href = "index.css"/>
+
     <script defer src="index.js" ></script> 
 </head>
 
@@ -70,81 +71,84 @@
                   
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>   <!-- &#10094 는 '<' 부호를 뜻함 -->
         <a class="next" onclick="plusSlides(1)">&#10095;</a>    <!-- &#10095 는 '>' 부호를 뜻함 -->
+    </div>
+                              <!--자바스크립트 함수는 마이너스가 안된다. 무조건 프러스만 있다  -->
+    <br>
 
+    <div style="text-align:center; background-color:var(--text-color);">
+      <span class="dot active" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
     </div>
 
-        <br>
-    <div style="text-align:center; background-color:var(--text-color);");>
-        <span class="dot" onclick="currentSlide(1)"></span> 
-        <span class="dot" onclick="currentSlide(2)"></span> 
-        <span class="dot" onclick="currentSlide(3)"></span> 
-    </div>
+
+  <script>
+    var slideIndex = 1;             //현재 이미지는 1이다
+    showSlides(slideIndex);
+
+      function plusSlides(n) {       // -1 / 1 을 대입하는 자리
+        showSlides(slideIndex += n);  // -1을 넣으면 0이된다(1 += -1 = 0) slideIndex = 0
+      }                
+
+      function currentSlide(n) {
+        showSlides(slideIndex = n);   //1이다(=slideIndex)
+      }
+
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        var prev = document.getElementsByClassName('prev');
+        var next = document.getElementsByClassName('next');
+
+        if (n > slides.length) {      //왜 n이 슬라이드 전체 갯수(3개)보다 큰가? 크면 4부터인데 4는 없다. 4번째는 없으니깐 4번째는 첫번째사진이되게
+          slideIndex = 1  //첫번쨰사진(반복되게 12312313)
+        }    
+        if (n < 1) {         //이전페이지 누른다는 뜻  (1=3이다) 첫번쨰에서 이전페이지 누르면 3번째 사진이 나온다
+          slideIndex = slides.length   //slideIndex가 슬라이드 전체 길이와 같다는게 무슨뜻일까
+        }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  //첫번째(0)를 제외한 나머지만  for문
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");  //replace()함수는 문자열을 바꿀때 사용  .replace("찾을 문자열". "바꿀문자열")
+        }                                                            //찾을 문자열을 active
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 2000);
+      }
+  </script>
       
+  <!--이미지 박스-->
+    <div class="img_box">
+      <div class="square_img1"><img src="imgbox1.jpg" alt="" onload="showImage()"></div>
+      <div class="square_img2"><img src="imgbox2.jpg" alt="" onload="showImage()"></div>
+      <div class="square_img3"><img src="imgbox3.jpg" alt="" onload="showImage()"></div>
+    </div>
 
-      <!--(3)img_sliding--> 
-        <!--
-          <ul class="slides">
-              
-              <input type="radio" name="radio-btn" id="img-1" checked />
-              <li class="slide-container">
-                  <div class="slide">
-                    <img src="img1.jpg" alt="cat"/>
-                  </div>
-          
-                  <div class="navi">
-                    <label for="img-4" class="prev">&#x2039;</label>
-                    <label for="img-2" class="next">&#x203a;</label>
-                  </div>
-              </li>
-          
-              <input type="radio" name="radio-btn" id="img-2" />
-              <li class="slide-container">
-                  <div class="slide">
-                    <img src="img2.jpg" alt="first woomen" />
-                  </div>
-          
-                  <div class="navi">
-                    <label for="img-1" class="prev">&#x2039;</label>
-                    <label for="img-3" class="next">&#x203a;</label>
-                  </div>
-              </li>
-          
-              <input type="radio" name="radio-btn" id="img-3" />
-              <li class="slide-container">
-                  <div class="slide">
-                    <img src="img3.jpg" alt="second women"/>
-                  </div>
-          
-                  <div class="navi">
-                    <label for="img-2" class="prev">&#x2039;</label>
-                    <label for="img-4" class="next">&#x203a;</label>
-                  </div>
-              </li>
-          
-              <input type="radio" name="radio-btn" id="img-4" />
-              <li class="slide-container">
-                  <div class="slide">
-                    <img src="img4.jpg" />
-                  </div>
-          
-                  <div class="navi">
-                    <label for="img-3" class="prev">&#x2039;</label>
-                    <label for="img-1" class="next">&#x203a;</label>
-                  </div>
-              </li>
-          
-              <li class="nav-dots">
-                <label for="img-1" class="nav-dot" id="img-dot-1"></label>
-                <label for="img-2" class="nav-dot" id="img-dot-2"></label>
-                <label for="img-3" class="nav-dot" id="img-dot-3"></label>
-                <label for="img-4" class="nav-dot" id="img-dot-4"></label>
-              </li>
-          </ul>
-        --> 
+
+
+    <script> 
+      var imgArray=new Array(); 
+        imgArray[0]="imgbox1.jpg"; 
+        imgArray[1]="imgbox2.jpg"; 
+        imgArray[2]="imgbox3.jpg"; 
+      
+      function showImage(){ 
+        var imgNum=Math.round(Math.random()*3); 
+        var objImg=document.getElementsByClassName("square_img1", "square_img2", "square_img3"); 
+        objImg.src=imgArray[imgNum]; 
+        setTimeout(showImage,1000); 
+      } 
+    </script> 
    
   </section>
+
+  <!--이전페이지 버튼-->
   <div class="btn_bg">
     <input class="slide_btn" type="button" value="Back to the previous Page" onClick="location.href='index.html';"> 
   </div>
+
+
 </body>
 </html>
