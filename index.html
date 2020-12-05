@@ -54,13 +54,13 @@
   <section>
 
     <!--portal-->
-    <form action="" name="form1" target="_blank">
+    <form action="" name="form1">
       <select name="links" onchange="goLink()">
           <option selected disabled hidden>Move to page</option>   <!--가장 기본으로 보여지는 옵션란은 title에 가깝기 떄문에 selected<기본값으로 보여짐), disabled<선택요소가 아님)-->
           <optgroup label="portal">
-              <option value="https://www.google.co.kr">google</option>
-              <option value="https://www.naver.com">Naver</option>
-              <option value="https://www.daum.net">Daum</option>
+              <option value="https://www.google.co.kr" target="_blank">google</option>
+              <option value="https://www.naver.com" target="_blank">Naver</option>
+              <option value="https://www.daum.net" target="_blank">Daum</option>
           </optgroup>
           
           <optgroup label="SNS">
@@ -73,14 +73,23 @@
 
     <!--clock-->
     <div class="clock">
-      <h1>Thank you for visiting website and taking your time </h1> 
-      <div class="clock-location">
-          <div class="main-clock"></div>  
-      </div>
-      <input class="slide_btn" type="button" value="Enjoy Image Slide Page" onClick="location.href='slide.html';">
+        <h1>Thank you for visiting website and taking your time </h1> 
+        <div class="clock-location">
+            <div class="main-clock"></div>  
+        </div>
+
+        <!--circlespin-->  
+        <div class="load">
+          <hr/>
+          <hr/>
+          <hr/>
+          <hr/>
+        </div>
     </div>
+
     
   </section> 
+
 
 <!-- Footer-->
   <footer>

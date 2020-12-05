@@ -90,7 +90,69 @@ td {
 }
 
 
-
+@media only screen and (max-width: 900px) {
+    fieldset{
+        max-width: 35em;
+        margin: 40px auto;
+    }
+    table{
+        border:0; 
+        width:300px; 
+        margin:auto;
+        font-weight: var( --weight-bold);
+        font-size: 20px;
+        color: #ff6f00;
+        padding: 30px 0;
+    }
+    caption{
+        font-size:30px;
+        text-align:center;
+        margin-top:25px;
+        padding:5px;
+        background-color:  #c43e00;
+        color:white;
+        width:450px;
+        border-radius: 30px;
+    }
+    td {
+        padding: 6px;
+        font-size:20px;
+    }
+    .answer input{
+        width:100%; 
+    }
+}
+@media only screen and (max-width: 580px) {
+    fieldset{
+        max-width: 25em;
+        margin: 40px auto;
+    }
+    table{
+        border:0; 
+        width:350px; 
+        margin:auto;
+        font-weight: var( --weight-bold);
+        font-size: 25px;
+        padding: 30px 0;
+    }
+    caption{
+        font-size:25px;
+        text-align:center;
+        margin-top:25px;
+        padding:5px;
+        background-color:  #c43e00;
+        color:white;
+        width:350px;
+        border-radius: 30px;
+    }
+    td {
+        padding: 4px;
+        font-size:15px;
+    }
+    .answer input{
+        width:100%; 
+    }
+}
 
 
   /* Footer */

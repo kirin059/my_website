@@ -40,7 +40,7 @@ html {
 
 
   /* Section */
-  section{
+section{
     grid-row-start:2;
     grid-row-end: 3;
     margin:0;
@@ -66,11 +66,11 @@ html {
  }
 
  #question {
-    padding: 10px 2em;
+    padding: 6px 2em;
     margin: 15px auto;
     background: salmon;
     border-radius: 15px;
-    font-size: 22px;
+    font-size: 25px;
     color: #fff;
     height: 45px;
  }
@@ -90,7 +90,7 @@ html {
     padding: 10px;
     width: 300px;
     height: 40px;
-    font-size: 16px;
+    font-size: 20px;
     color: #333;
     background: #eed0dc;
     border: 1px solid #ffe3ed;
@@ -121,7 +121,7 @@ html {
  @media only screen and (max-width: 900px) {
     body{
         display: grid;
-        grid-template-rows: 60px 500px 1fr;
+        grid-template-rows: 60px 3fr 1fr;
     }
     .grid{
         width:600px;
@@ -130,13 +130,35 @@ html {
         font-size: 30px;
     }
     #question, .btn {
-        font-size: 15px;
+        font-size: 20px;
         margin: 0;
         margin-bottom:10px;
         padding-bottom:30px;
     }
     .buttons {
         padding: 10px;
+    }
+}
+@media only screen and (max-width: 580px) {
+    body{
+        display: grid;
+        grid-template-rows: 60px 3fr 1fr;
+    }
+    .grid{
+        width:550px;
+    }
+    .grid h1{
+        font-size: 25px;
+        padding-bottom: 5px;
+    }
+    #question, .btn {
+        font-size: 18px;
+        margin: 0;
+        margin-bottom:5px;
+        padding-bottom:20px;
+    }
+    .buttons {
+        padding: 8px;
     }
 }
 
